@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WJL-yM-Jca">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="NiT-bZ-X7o">
+            <objects>
+                <viewController id="WJL-yM-Jca" customClass="SplashViewController" customModule="CursoiOSAdvanced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z7V-iP-XkX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_icon" translatesAutoresizingMaskIntoConstraints="NO" id="jEd-sW-bLJ">
+                                <rect key="frame" x="87" y="145" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jEd-sW-bLJ" secondAttribute="height" multiplier="1:1" id="rxy-Ph-7Oo"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AsW-u4-Cqd">
+                                <rect key="frame" x="87" y="449" width="240" height="240"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="YhJ-Zu-ffr"/>
+                                    <constraint firstAttribute="height" constant="240" id="bwj-Go-GS0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AsW-u4-Cqd" firstAttribute="top" secondItem="jEd-sW-bLJ" secondAttribute="bottom" constant="64" id="7xu-DD-gXC"/>
+                            <constraint firstItem="jEd-sW-bLJ" firstAttribute="top" secondItem="hPu-sw-luc" secondAttribute="top" constant="101" id="FPa-uz-wAs"/>
+                            <constraint firstItem="hPu-sw-luc" firstAttribute="trailing" secondItem="jEd-sW-bLJ" secondAttribute="trailing" constant="87" id="cGF-PW-8JM"/>
+                            <constraint firstItem="AsW-u4-Cqd" firstAttribute="leading" secondItem="hPu-sw-luc" secondAttribute="leading" constant="87" id="gUk-Ta-UyM"/>
+                            <constraint firstItem="AsW-u4-Cqd" firstAttribute="centerX" secondItem="Z7V-iP-XkX" secondAttribute="centerX" id="jQh-sS-JU2"/>
+                            <constraint firstItem="jEd-sW-bLJ" firstAttribute="leading" secondItem="hPu-sw-luc" secondAttribute="leading" constant="87" id="lwC-q8-6rM"/>
+                            <constraint firstItem="jEd-sW-bLJ" firstAttribute="centerX" secondItem="Z7V-iP-XkX" secondAttribute="centerX" id="um5-1t-dQw"/>
+                            <constraint firstItem="hPu-sw-luc" firstAttribute="trailing" secondItem="AsW-u4-Cqd" secondAttribute="trailing" constant="87" id="xm3-0f-c0c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hPu-sw-luc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cB8-jC-8el" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_icon" width="341.33334350585938" height="341.33334350585938"/>
+    </resources>
+</document>
