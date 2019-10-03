@@ -36,26 +36,30 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Si1-iY-icO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Si1-iY-icO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="m1l-rb-A2i">
-                                <rect key="frame" x="141.5" y="60" width="131" height="32"/>
+                                <rect key="frame" x="127" y="60" width="160" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Nr4-At-dVe"/>
+                                    <constraint firstAttribute="height" constant="35" id="RF6-lQ-8cO"/>
+                                </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="" image="list.dash" catalog="system"/>
+                                    <segment title="" image="rectangle.grid.2x2" catalog="system"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="m1l-rb-A2i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="5xk-BP-e8F"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Si1-iY-icO" secondAttribute="trailing" id="70f-RB-J0M"/>
-                            <constraint firstItem="m1l-rb-A2i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P28-Tw-stM"/>
                             <constraint firstItem="xZ8-xQ-PDj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XYV-GC-ofg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xZ8-xQ-PDj" secondAttribute="bottom" id="YXS-jf-1DN"/>
+                            <constraint firstItem="m1l-rb-A2i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="YmQ-mU-7c8"/>
                             <constraint firstItem="Si1-iY-icO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bcI-vu-Czd"/>
+                            <constraint firstItem="m1l-rb-A2i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jcw-e8-w9u"/>
                             <constraint firstItem="Si1-iY-icO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jqh-fa-c63"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xZ8-xQ-PDj" secondAttribute="trailing" id="tLN-RD-NWM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Si1-iY-icO" secondAttribute="bottom" id="yg3-3b-yce"/>
@@ -73,4 +77,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list.dash" catalog="system" width="64" height="44"/>
+        <image name="rectangle.grid.2x2" catalog="system" width="64" height="50"/>
+    </resources>
 </document>
