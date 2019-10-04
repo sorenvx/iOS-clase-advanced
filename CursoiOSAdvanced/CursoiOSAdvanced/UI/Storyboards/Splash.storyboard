@@ -22,27 +22,29 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AsW-u4-Cqd">
-                                <rect key="frame" x="87" y="449" width="240" height="240"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="57" y="449" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="YhJ-Zu-ffr"/>
-                                    <constraint firstAttribute="height" constant="240" id="bwj-Go-GS0"/>
+                                    <constraint firstAttribute="width" constant="300" id="YhJ-Zu-ffr"/>
+                                    <constraint firstAttribute="height" constant="300" id="bwj-Go-GS0"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="AsW-u4-Cqd" firstAttribute="top" secondItem="jEd-sW-bLJ" secondAttribute="bottom" constant="64" id="7xu-DD-gXC"/>
+                            <constraint firstItem="hPu-sw-luc" firstAttribute="trailing" secondItem="AsW-u4-Cqd" secondAttribute="trailing" constant="57" id="C4C-tt-eCq"/>
                             <constraint firstItem="jEd-sW-bLJ" firstAttribute="top" secondItem="hPu-sw-luc" secondAttribute="top" constant="101" id="FPa-uz-wAs"/>
                             <constraint firstItem="hPu-sw-luc" firstAttribute="trailing" secondItem="jEd-sW-bLJ" secondAttribute="trailing" constant="87" id="cGF-PW-8JM"/>
-                            <constraint firstItem="AsW-u4-Cqd" firstAttribute="leading" secondItem="hPu-sw-luc" secondAttribute="leading" constant="87" id="gUk-Ta-UyM"/>
+                            <constraint firstItem="AsW-u4-Cqd" firstAttribute="leading" secondItem="hPu-sw-luc" secondAttribute="leading" constant="57" id="dll-Sr-NNG"/>
                             <constraint firstItem="AsW-u4-Cqd" firstAttribute="centerX" secondItem="Z7V-iP-XkX" secondAttribute="centerX" id="jQh-sS-JU2"/>
                             <constraint firstItem="jEd-sW-bLJ" firstAttribute="leading" secondItem="hPu-sw-luc" secondAttribute="leading" constant="87" id="lwC-q8-6rM"/>
                             <constraint firstItem="jEd-sW-bLJ" firstAttribute="centerX" secondItem="Z7V-iP-XkX" secondAttribute="centerX" id="um5-1t-dQw"/>
-                            <constraint firstItem="hPu-sw-luc" firstAttribute="trailing" secondItem="AsW-u4-Cqd" secondAttribute="trailing" constant="87" id="xm3-0f-c0c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hPu-sw-luc"/>
                     </view>
+                    <connections>
+                        <outlet property="mviewLoading" destination="AsW-u4-Cqd" id="n57-P7-Jvr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cB8-jC-8el" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

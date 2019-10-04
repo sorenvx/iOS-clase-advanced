@@ -12,6 +12,7 @@ class UsersViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segmentOptions: UISegmentedControl!
     
     private var cellSpacing: CGFloat = 16.0
     

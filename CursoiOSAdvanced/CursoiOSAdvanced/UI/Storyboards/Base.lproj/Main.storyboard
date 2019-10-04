@@ -69,6 +69,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="xZ8-xQ-PDj" id="gNN-Yh-SVR"/>
+                        <outlet property="segmentOptions" destination="m1l-rb-A2i" id="KHv-YJ-qhH"/>
                         <outlet property="tableView" destination="Si1-iY-icO" id="wUY-sj-yXX"/>
                     </connections>
                 </viewController>
