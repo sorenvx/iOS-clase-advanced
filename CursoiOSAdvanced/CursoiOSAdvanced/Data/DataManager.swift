@@ -15,47 +15,104 @@ class DataManager {
     
     
     
-    func users(completion: ServiceCompletion) {
-        let users = usersDB()
-        if usersDB().count > 0 {
-            //devolver usersDB
-            completion(.success(data: users))
-        } else {
-            // llamar al servicio y guardar usuarios en base de datos
-            usersForceUpdate(completion: completion)
+    func users(completion: @escaping ServiceCompletion) {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+           if let usersDAO = self?.usersDB(), usersDAO.count > 0 {
+           //devolver usersDB
+           // Convierte listado de userDAO a un listado de User
+           let users = self?.users(from: usersDAO)
+           
+           
+           DispatchQueue.main.async {
+               completion(.success(data: users))
+           }
+            } else {
+                // llamar al servicio y guardar usuarios en base de datos
+                DispatchQueue.main.async {
+                    self?.usersForceUpdate(completion: completion)
+                }
+                
+            }
         }
     }
     
-    func usersForceUpdate(completion: ServiceCompletion) {
-        //llamas al servicio
-        ApiManager.shared.fetchUsers() { result in
-            //hay que obetener el case del enumerado para que si es succes devuelva los users
-            switch result {
-            case .success(let data):
-                guard let users = data as? UsersDTO else {
-                    completion(.failure(msg: "Mensaje de erros"))
-                    return
+    func usersForceUpdate(completion: @escaping ServiceCompletion) { //se pone escaping para que no elimine la información
+        //llamas al servicio para obtener nuevos usuarios
+        
+        DispatchQueue.global(qos: .background).async {
+            ApiManager.shared.fetchUsers() {[weak self] result in //weak self porque un self en un closure suma +1
+                //hay que obetener el case del enumerado para que si es succes devuelva los users
+                switch result {
+                case .success(let data):
+                    guard let users = data as? UsersDTO else {
+                        DispatchQueue.main.async {
+                            completion(.failure(msg: "Mensaje de erros"))
+                        }
+                        return
+                    }
+                    
+                    // eliminar los usuarios de la base de datos
+                    DatabaseManager.shared.deleteAll()
+                    //guardar usuarios en base de datos
+                    self?.save(users: users)
+                    
+                    
+                    
+                    DispatchQueue.main.async {
+                        completion(.success(data: users))
+                    }
+                    // completion(.success(data: users)) //contestar
+                    
+                case .failure(let msg):
+                    print("Fallo al obtener usuarios del servicio: \(msg) ")
+                    
+                    DispatchQueue.main.async {
+                        completion(.failure(msg: msg))
+                    }
                 }
                 
-                // eliminar los usuarios de la base de datos
-                DatabaseManager.shared.deleteAll()
-                //guardar usuarios en base de datos
-                save(users: users)
-                completion(.success(data: users)) //contestar
-                
-            case .failure(let msg):
-                print("Fallo al obtener usuarios del servicio: \(msg) ")
             }
             
         }
-        
-        
     }
-    func user(id: String) -> UserDAO? {
-        return DatabaseManager.shared.user(by: id) //shared siempre nos va a devolver la mimsma estancia de la clase
+    //    func user() -> UserDAO? { //buscando ususario por id
+    //
+    //        return DatabaseManager.shared.user(by: id) //shared siempre nos va a devolver la mimsma estancia de la clase
+    //    }
+    func user(by id: String, completion: @escaping ServiceCompletion) {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            if let userDAO = DatabaseManager.shared.user(by: id) {
+                let user = self?.user(from: userDAO)
+                
+                DispatchQueue.main.async {
+                    completion(.success(data: user))
+                }
+            }
+            else {
+                DispatchQueue.main.async {
+                    completion(.failure(msg: "No se ha encontrado el usuario"))
+                }
+            }
+        }
+    }
+    private func users(from usersDAO: Array<UserDAO>) -> Array<User> {
+        return usersDAO.compactMap { userDAO in
+            return self.user(from: userDAO)
+        }
     }
     
-    private func usersDB() -> Array<UserDAO> { //son privadas porque solo se van a utilizar desde aquí
+    private func user(from userDAO: UserDAO) -> User {
+        return User(id: userDAO.uuid,
+                    avatar: userDAO.avatar,
+                    firstName: userDAO.firstName,
+                    lastName: userDAO.lastName,
+                    email: userDAO.email,
+                    country: userDAO.country,
+                    nat: nil,
+                    birthdate: userDAO.birthdate)
+    }
+    
+    private func usersDB() -> Array<UserDAO> { //son privadas porque solo se van a utilizar desde aquí, no se pueden utilizar desde otras sitios.
         return Array(DatabaseManager.shared.users())
     }
     
@@ -83,5 +140,8 @@ class DataManager {
         
         DatabaseManager.shared.save(user: userDB)
     }
-    
+    private func usersFromUsersDB() -> Array<User> {
+    let usersDAO = usersDB()
+        
+    return usersDAO
 }

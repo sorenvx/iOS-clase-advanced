@@ -29,6 +29,7 @@
 		D97CD0BD2347C7C300F28404 /* RegisteredDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97CD0BC2347C7C300F28404 /* RegisteredDTO.swift */; };
 		D97CD0BF2347C80400F28404 /* PictureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97CD0BE2347C80400F28404 /* PictureDTO.swift */; };
 		D97CD0C12347CC7400F28404 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97CD0C02347CC7400F28404 /* DataManager.swift */; };
+		D9859403234CEE9B00C97E98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9859402234CEE9B00C97E98 /* User.swift */; };
 		D98B5189234B891800E42099 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B5188234B891800E42099 /* DatabaseManager.swift */; };
 		D98B518B234BAEBD00E42099 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B518A234BAEBD00E42099 /* ApiManager.swift */; };
 		D99E03EB23464B1A0050E045 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99E03EA23464B1A0050E045 /* Splash.storyboard */; };
@@ -68,6 +69,7 @@
 		D97CD0BC2347C7C300F28404 /* RegisteredDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredDTO.swift; sourceTree = "<group>"; };
 		D97CD0BE2347C80400F28404 /* PictureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDTO.swift; sourceTree = "<group>"; };
 		D97CD0C02347CC7400F28404 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D9859402234CEE9B00C97E98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D98B5188234B891800E42099 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D98B518A234BAEBD00E42099 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		D99E03EA23464B1A0050E045 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
@@ -184,6 +186,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D9859400234CEE7200C97E98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9859401234CEE8000C97E98 /* Models */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D9859401234CEE8000C97E98 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D9859402234CEE9B00C97E98 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D99E03E42346445A0050E045 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +225,7 @@
 		D99E03E6234644820050E045 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D9859400234CEE7200C97E98 /* Views */,
 				D97CD0C02347CC7400F28404 /* DataManager.swift */,
 				D97CD0A62347BEDC00F28404 /* Remote */,
 				D97CD0A22347B65500F28404 /* Local */,
@@ -410,6 +429,7 @@
 				D95BD188234523E7001336F8 /* SceneDelegate.swift in Sources */,
 				D99E03ED23464E8F0050E045 /* SplashViewController.swift in Sources */,
 				D99E03F8234664670050E045 /* PersonCollectionViewCell.swift in Sources */,
+				D9859403234CEE9B00C97E98 /* User.swift in Sources */,
 				D98B518B234BAEBD00E42099 /* ApiManager.swift in Sources */,
 				D97CD0B72347C5E100F28404 /* TimezoneDTO.swift in Sources */,
 				D97CD0AB2347C0FB00F28404 /* InfoDTO.swift in Sources */,
