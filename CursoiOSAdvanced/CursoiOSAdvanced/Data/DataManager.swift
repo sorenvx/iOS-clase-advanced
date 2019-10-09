@@ -17,21 +17,16 @@ class DataManager {
     
     func users(completion: @escaping ServiceCompletion) {
         DispatchQueue.global(qos: .background).async { [weak self] in
-           if let usersDAO = self?.usersDB(), usersDAO.count > 0 {
-           //devolver usersDB
-           // Convierte listado de userDAO a un listado de User
-           let users = self?.users(from: usersDAO)
-           
-           
-           DispatchQueue.main.async {
-               completion(.success(data: users))
-           }
+            if let users = self?.usersFromUsersDB(), users.count > 0 {
+                //devolver usersDB
+                DispatchQueue.main.async {
+                    completion(.success(data: users))
+                }
             } else {
                 // llamar al servicio y guardar usuarios en base de datos
                 DispatchQueue.main.async {
                     self?.usersForceUpdate(completion: completion)
                 }
-                
             }
         }
     }
@@ -44,9 +39,9 @@ class DataManager {
                 //hay que obetener el case del enumerado para que si es succes devuelva los users
                 switch result {
                 case .success(let data):
-                    guard let users = data as? UsersDTO else {
+                    guard let usersDTO = data as? UsersDTO else {
                         DispatchQueue.main.async {
-                            completion(.failure(msg: "Mensaje de erros"))
+                            completion(.failure(msg: "Mensaje de error"))
                         }
                         return
                     }
@@ -54,8 +49,9 @@ class DataManager {
                     // eliminar los usuarios de la base de datos
                     DatabaseManager.shared.deleteAll()
                     //guardar usuarios en base de datos
-                    self?.save(users: users)
+                    self?.save(users: usersDTO)
                     
+                    let users = self?.usersFromUsersDB()
                     
                     
                     DispatchQueue.main.async {
@@ -108,7 +104,7 @@ class DataManager {
                     lastName: userDAO.lastName,
                     email: userDAO.email,
                     country: userDAO.country,
-                    nat: nil,
+                    nationality: userDAO.nationality,
                     birthdate: userDAO.birthdate)
     }
     
@@ -141,7 +137,8 @@ class DataManager {
         DatabaseManager.shared.save(user: userDB)
     }
     private func usersFromUsersDB() -> Array<User> {
-    let usersDAO = usersDB()
+        let usersDAO = usersDB()
         
-    return usersDAO
+        return users(from: usersDAO)
+    }
 }

@@ -15,12 +15,25 @@ class UsersViewController: UIViewController {
     @IBOutlet weak var segmentOptions: UISegmentedControl!
     
     private var cellSpacing: CGFloat = 16.0
+    private var users: Array<User> = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        DataManager.shared.users() { [weak self] result in
+            switch result {
+            case .success(let data):
+                guard let users = data as? Array<User> else {
+                    return
+                }
+                self?.users = users
+                
+            case .failure(let msg):
+                print ("Fallo al obtener usuarios: \(msg)")
+            }
+        }
     }
-    
 }
 
 // MARK: - Extension TableView methods

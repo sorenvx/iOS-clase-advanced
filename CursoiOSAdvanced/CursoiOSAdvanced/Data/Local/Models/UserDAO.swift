@@ -22,6 +22,7 @@ class UserDAO: Object { //direct access object
     @objc dynamic var uuid: String = ""
     @objc dynamic var birthdate: Date?
     @objc dynamic var avatar: String?
+    @objc dynamic var nationality: String?
     
     override static func primaryKey() -> String? {
         return "uuid"

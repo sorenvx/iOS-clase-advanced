@@ -16,24 +16,24 @@ class User {
     let email: String?
     let birthdate: Date?
     let country: String?
-    let nat: String?
+    let nationality: String?
     
     var name: String {
         return "\(String(describing: firstName)) \(String(describing: lastName))"
     }
     
     var age: Int {
-        guard let date = birthdate else {
+        guard let date = birthdate, let ageComponent = Calendar.current.dateComponents([.year], from: date, to: Date()).year else {
             return 0
         }
-        let ageComponent = Calendar.current.dateComponents([.year], from: date, to: Date())
         
-        return ageComponent.year ?? 0
+        
+        return ageComponent
         
     }
     
     
-    init(id: String, avatar: String? = nil, firstName: String? = nil, lastName: String? = nil, email: String? = nil, country: String? = nil, nat: String? = nil, birthdate: Date? = nil) {
+    init(id: String, avatar: String? = nil, firstName: String? = nil, lastName: String? = nil, email: String? = nil, country: String? = nil, nationality: String? = nil, birthdate: Date? = nil) {
         
         self.id = id
         self.avatar = avatar
@@ -42,6 +42,6 @@ class User {
         self.email = email
         self.birthdate = birthdate
         self.country = country
-        self.nat = nat
+        self.nationality = nationality
     }
 }
