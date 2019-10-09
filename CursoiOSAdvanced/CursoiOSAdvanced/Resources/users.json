@@ -1,0 +1,284 @@
+{
+    "results": [{
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Philip",
+            "last": "Lambert"
+        },
+        "location": {
+            "street": {
+                "number": 7580,
+                "name": "Crockett St"
+            },
+            "city": "Albuquerque",
+            "state": "West Virginia",
+            "country": "United States",
+            "postcode": 55324,
+            "coordinates": {
+                "latitude": "83.9541",
+                "longitude": "-66.4249"
+            },
+            "timezone": {
+                "offset": "-3:30",
+                "description": "Newfoundland"
+            }
+        },
+        "email": "Philip.Lambert@example.com",
+        "login": {
+            "uuid": "c85c20f8-8ed9-4df3-ac8e-cdb3d413463c",
+            "username": "orangetiger826",
+            "password": "sausage",
+            "salt": "I3YMY9oN",
+            "md5": "98d8ea77dd7663ea20f813181faf9987",
+            "sha1": "3e68f76cb45426eee4bfb7fc657e3468a0fbc9de",
+            "sha256": "8868e241df74be52b533336cf3569fe1efc9cc8611e0206cab91ede11c8df301"
+        },
+        "dob": {
+            "date": "1990-10-20T02:05:28.066Z",
+            "age": 29
+        },
+        "registered": {
+            "date": "2015-04-27T11:37:24.876Z",
+            "age": 4
+        },
+        "phone": "(830)-233-1890",
+        "cell": "(919)-766-0142",
+        "id": {
+            "name": "SSN",
+            "value": "657-31-0496"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/23.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/23.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/23.jpg"
+        },
+        "nat": "US"
+    }, {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Juan",
+            "last": "Williams"
+        },
+        "location": {
+            "street": {
+                "number": 6997,
+                "name": "Pecan Acres Ln"
+            },
+            "city": "Australian Capital Territory",
+            "state": "Australian Capital Territory",
+            "country": "Australia",
+            "postcode": 220,
+            "coordinates": {
+                "latitude": "75.1223",
+                "longitude": "-157.1362"
+            },
+            "timezone": {
+                "offset": "+1:00",
+                "description": "Brussels, Copenhagen, Madrid, Paris"
+            }
+        },
+        "email": "Juan.Williams@example.com",
+        "login": {
+            "uuid": "f2eb9a01-7499-4c61-87fb-008f7b910b96",
+            "username": "bigrabbit552",
+            "password": "thumbs",
+            "salt": "LzHOhBDm",
+            "md5": "1b412cc4a18746d25d895041140ff1eb",
+            "sha1": "9a77dd9999089a2fb656a583de862cf290816911",
+            "sha256": "09c71a552f06f5e3e5d048b30c0713f53b151d43d7481bc4b6fa8882b9320c8e"
+        },
+        "dob": {
+            "date": "1954-07-11T22:28:30.698Z",
+            "age": 65
+        },
+        "registered": {
+            "date": "2002-03-30T02:47:19.504Z",
+            "age": 17
+        },
+        "phone": "08-6577-8038",
+        "cell": "0402-745-871",
+        "id": {
+            "name": "TFN",
+            "value": "147124452"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/39.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/39.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/39.jpg"
+        },
+        "nat": "AU"
+    }, {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Maxence",
+            "last": "Lefevre"
+        },
+        "location": {
+            "street": {
+                "number": 6656,
+                "name": "Rue de Gerland"
+            },
+            "city": "Montreuil",
+            "state": "Pyrénées-Orientales",
+            "country": "France",
+            "postcode": 97579,
+            "coordinates": {
+                "latitude": "8.5159",
+                "longitude": "53.9494"
+            },
+            "timezone": {
+                "offset": "+4:30",
+                "description": "Kabul"
+            }
+        },
+        "email": "Maxence.Lefevre@example.com",
+        "login": {
+            "uuid": "2773e1c8-206e-499b-8e05-e14c68db137c",
+            "username": "bluefish478",
+            "password": "carman",
+            "salt": "hpVBU312",
+            "md5": "ece1e7c3eef9aed8d9f4793adb0de5c3",
+            "sha1": "e7485a6e4e038fcd69f8bc92e62e419d677637f6",
+            "sha256": "22d55beee78c23b4ee871171d20296d39bdeee7c88c4279fc17530e75213ea77"
+        },
+        "dob": {
+            "date": "1979-04-17T20:21:05.722Z",
+            "age": 40
+        },
+        "registered": {
+            "date": "2010-10-31T04:43:39.479Z",
+            "age": 9
+        },
+        "phone": "02-92-56-61-00",
+        "cell": "06-38-74-47-29",
+        "id": {
+            "name": "INSEE",
+            "value": "1NNaN34487123 44"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/10.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/10.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/10.jpg"
+        },
+        "nat": "FR"
+    }, {
+        "gender": "female",
+        "name": {
+            "title": "Mrs",
+            "first": "Maia",
+            "last": "Thomas"
+        },
+        "location": {
+            "street": {
+                "number": 2899,
+                "name": "Remuera Road"
+            },
+            "city": "Auckland",
+            "state": "Waikato",
+            "country": "New Zealand",
+            "postcode": 74319,
+            "coordinates": {
+                "latitude": "-55.4886",
+                "longitude": "-81.7197"
+            },
+            "timezone": {
+                "offset": "-6:00",
+                "description": "Central Time (US & Canada), Mexico City"
+            }
+        },
+        "email": "Maia.Thomas@example.com",
+        "login": {
+            "uuid": "7694077a-8aa7-48cf-94c7-cedd3246a714",
+            "username": "yellowkoala218",
+            "password": "thick",
+            "salt": "oUZDdYQP",
+            "md5": "5e3c6805f58f0e641c344e947dcce6ab",
+            "sha1": "d59a0e25b6c968c9644cb3eefd55846c6e328e34",
+            "sha256": "dc4832bc6a1f7b5412d532d561be4e871c9e3dc5d25d9c7179fadfd118b4c260"
+        },
+        "dob": {
+            "date": "1998-05-31T02:34:32.406Z",
+            "age": 21
+        },
+        "registered": {
+            "date": "2003-04-08T00:23:28.970Z",
+            "age": 16
+        },
+        "phone": "(705)-618-0671",
+        "cell": "(975)-607-7268",
+        "id": {
+            "name": "",
+            "value": null
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/61.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/61.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/61.jpg"
+        },
+        "nat": "NZ"
+    }, {
+        "gender": "female",
+        "name": {
+            "title": "Ms",
+            "first": "Julie",
+            "last": "Nicolas"
+        },
+        "location": {
+            "street": {
+                "number": 5065,
+                "name": "Rue de L'Abbé-Roger-Derry"
+            },
+            "city": "Caen",
+            "state": "Morbihan",
+            "country": "France",
+            "postcode": 27266,
+            "coordinates": {
+                "latitude": "76.1117",
+                "longitude": "-78.8959"
+            },
+            "timezone": {
+                "offset": "+4:00",
+                "description": "Abu Dhabi, Muscat, Baku, Tbilisi"
+            }
+        },
+        "email": "Julie.Nicolas@example.com",
+        "login": {
+            "uuid": "9aa3005d-b77b-43e5-b6dc-33469d8aba34",
+            "username": "blackpeacock410",
+            "password": "rachelle",
+            "salt": "gm8b8zKT",
+            "md5": "1f7a332dfbf79fc0afdd40d17f7ae925",
+            "sha1": "cd7621977d8926b6d156d02877977f8122155792",
+            "sha256": "4a67b0120840e2b869dee7f6c7acd5dd03901ca20ed25331ff58a67b193e3aff"
+        },
+        "dob": {
+            "date": "1963-10-22T14:14:24.554Z",
+            "age": 56
+        },
+        "registered": {
+            "date": "2006-08-24T00:35:51.347Z",
+            "age": 13
+        },
+        "phone": "03-57-60-12-75",
+        "cell": "06-59-75-28-01",
+        "id": {
+            "name": "INSEE",
+            "value": "2NNaN42579523 42"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/81.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/81.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/81.jpg"
+        },
+        "nat": "FR"
+    }],
+    "info": {
+        "seed": "c98b20e33a1e5755",
+        "results": 5,
+        "page": 1,
+        "version": "1.3"
+    }
+}

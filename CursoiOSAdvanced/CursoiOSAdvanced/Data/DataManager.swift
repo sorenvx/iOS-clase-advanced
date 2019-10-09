@@ -132,7 +132,8 @@ class DataManager {
                              latitude: user.location?.coordinates?.latitude,
                              longitude: user.location?.coordinates?.longitude,
                              email: user.email,
-                             birthdate: user.dob?.date)
+                             birthdate: user.dob?.date,
+                             nationality: user.nat)
         
         DatabaseManager.shared.save(user: userDB)
     }

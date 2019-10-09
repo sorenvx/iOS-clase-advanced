@@ -36,7 +36,9 @@ class UserDAO: Object { //direct access object
                      latitude: String? = nil,
                      longitude: String? = nil,
                      email: String? = nil,
-                     birthdate: Date? = nil) {
+                     birthdate: Date? = nil,
+                     nationality: String? = nil) {
+        
         self.init()
         self.uuid = uuid
         self.avatar = avatar
@@ -48,7 +50,7 @@ class UserDAO: Object { //direct access object
         self.longitude = longitude
         self.email = email
         self.birthdate = birthdate
-        
+        self.nationality = nationality
     }
 }
 

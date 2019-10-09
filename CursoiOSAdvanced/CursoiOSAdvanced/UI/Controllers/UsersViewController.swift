@@ -36,6 +36,10 @@ class UsersViewController: UIViewController {
     }
 }
 
+
+private func loadUsers() {
+   
+}
 // MARK: - Extension TableView methods
 extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     

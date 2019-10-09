@@ -30,6 +30,7 @@
 		D97CD0BF2347C80400F28404 /* PictureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97CD0BE2347C80400F28404 /* PictureDTO.swift */; };
 		D97CD0C12347CC7400F28404 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97CD0C02347CC7400F28404 /* DataManager.swift */; };
 		D9859403234CEE9B00C97E98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9859402234CEE9B00C97E98 /* User.swift */; };
+		D989CC62234E50680019A33A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = D989CC61234E50680019A33A /* users.json */; };
 		D98B5189234B891800E42099 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B5188234B891800E42099 /* DatabaseManager.swift */; };
 		D98B518B234BAEBD00E42099 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B518A234BAEBD00E42099 /* ApiManager.swift */; };
 		D99E03EB23464B1A0050E045 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99E03EA23464B1A0050E045 /* Splash.storyboard */; };
@@ -70,6 +71,7 @@
 		D97CD0BE2347C80400F28404 /* PictureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDTO.swift; sourceTree = "<group>"; };
 		D97CD0C02347CC7400F28404 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D9859402234CEE9B00C97E98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D989CC61234E50680019A33A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		D98B5188234B891800E42099 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D98B518A234BAEBD00E42099 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		D99E03EA23464B1A0050E045 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		D99E03E52346446D0050E045 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D989CC61234E50680019A33A /* users.json */,
 				D97CD0A0234797B000F28404 /* social.json */,
 				D97CD09E23478DE300F28404 /* biker.json */,
 				D95BD18E234523EE001336F8 /* Assets.xcassets */,
@@ -354,6 +357,7 @@
 				D95BD18D234523E7001336F8 /* Main.storyboard in Resources */,
 				D99E03F9234664670050E045 /* PersonCollectionViewCell.xib in Resources */,
 				D99E03EB23464B1A0050E045 /* Splash.storyboard in Resources */,
+				D989CC62234E50680019A33A /* users.json in Resources */,
 				D97CD09F23478DE300F28404 /* biker.json in Resources */,
 				D97CD0A1234797B000F28404 /* social.json in Resources */,
 				D99E03F4234662B20050E045 /* PersonTableViewCell.xib in Resources */,
