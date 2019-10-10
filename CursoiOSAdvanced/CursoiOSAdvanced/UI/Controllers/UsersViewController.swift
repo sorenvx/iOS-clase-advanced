@@ -21,6 +21,12 @@ class UsersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        loadUsers()
+        self.configure(tableView: tableView)
+    }
+    
+    
+    private func loadUsers() {
         DataManager.shared.users() { [weak self] result in
             switch result {
             case .success(let data):
@@ -37,9 +43,7 @@ class UsersViewController: UIViewController {
 }
 
 
-private func loadUsers() {
-   
-}
+
 // MARK: - Extension TableView methods
 extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -50,7 +54,7 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return users.count
         // esta función es para contar el numero de elementos
     }
     
@@ -73,7 +77,7 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
         collectionView.delegate = self
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return users.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

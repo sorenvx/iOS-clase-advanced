@@ -38,3 +38,5 @@ class PersonTableViewCell: UITableViewCell {
         imagePersonViewCell.image = UIImage(named: image ?? "")
     }
 }
+
+
