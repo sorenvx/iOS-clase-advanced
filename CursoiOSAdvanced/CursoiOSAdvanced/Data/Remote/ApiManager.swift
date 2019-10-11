@@ -28,49 +28,27 @@ class ApiManager {
         let users = testLoadUsersJson()
         completion( .success(data: users))
     }
-    
-}
-
-private func testLoadUsersJson() -> UsersDTO? {
-    // Llamar al servicio
-    if let path = Bundle.main.path(forResource: "users", ofType: "json") {
-        do {
-            let jsonData = try Data(contentsOf: URL(fileURLWithPath: path))
-            let decoder = JSONDecoder()
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-            decoder.dateDecodingStrategy = .formatted(dateFormatter)
-            return try decoder.decode(UsersDTO.self, from: jsonData)
+    private func testLoadUsersJson() -> UsersDTO? {
+        // Llamar al servicio
+        if let path = Bundle.main.path(forResource: "users", ofType: "json") {
+            do {
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path))
+                let decoder = JSONDecoder()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                return try decoder.decode(UsersDTO.self, from: jsonData)
+            }
+            catch let error {
+                print("parse error: \(error.localizedDescription)")
+                return nil
+            }
         }
-        catch let error {
-            print("parse error: \(error.localizedDescription)")
+        else {
+            print("Invalid filename/path.")
             return nil
         }
     }
-    else {
-        print("Invalid filename/path.")
-        return nil
-    }
 }
 
-//private func testLoadUsersJson2() -> UsersDTO? {
-//
-//}
 
-//// Paso un string a diccionario
-//if let dataUser = jsonUserString.data(using: .utf8),
-//    let user = try? JSONSerialization.jsonObject(with: dataUser, options: []) as? [String : Any] {
-//        print(user)
-//
-//    // Como crear un objeto con código a mano
-//    let nameUserCodigo = NameDTO(title: "Mr", first: "Sansao", last: "Ferreira")
-//    let userCodigo = UserDTO(gender: "male", name: nameUserCodigo)
-//    print(userCodigo)
-//
-//    // Paso el string a structs
-//    let decoder = JSONDecoder()
-//    if let userDTO = try? decoder.decode(UserDTO.self, from: dataUser) {
-//       print(userDTO)
-//    }
-//
-//}

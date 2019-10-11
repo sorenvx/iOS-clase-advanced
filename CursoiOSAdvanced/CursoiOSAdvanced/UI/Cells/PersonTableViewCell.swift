@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 
 class PersonTableViewCell: UITableViewCell {
@@ -33,9 +34,10 @@ class PersonTableViewCell: UITableViewCell {
     
     //hay que crear una funcion para configurar las listas
     func configureCell(image: String? = nil, name: String?, email: String? = nil) {
+        let url = URL(string: image ?? "")
         labelPersonViewCell.text = name
         labelPersonViewCell2.text = email
-        imagePersonViewCell.image = UIImage(named: image ?? "")
+        imagePersonViewCell.kf.setImage(with: url)
     }
 }
 

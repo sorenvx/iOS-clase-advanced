@@ -24,9 +24,7 @@ class DataManager {
                 }
             } else {
                 // llamar al servicio y guardar usuarios en base de datos
-                DispatchQueue.main.async {
-                    self?.usersForceUpdate(completion: completion)
-                }
+                self?.usersForceUpdate(completion: completion)
             }
         }
     }
@@ -91,6 +89,43 @@ class DataManager {
             }
         }
     }
+    
+    private func usersDB() -> Array<UserDAO> { //son privadas porque solo se van a utilizar desde aquí, no se pueden utilizar desde otras sitios.
+        return Array(DatabaseManager.shared.users())
+    }
+    
+    private func save(users: UsersDTO) {
+        guard let usersToSave = users.users else {
+            return
+        }
+        usersToSave.forEach{ save(user: $0) }
+    }
+    
+    private func save(user: UserDTO) {
+           guard let userId = user.email else {
+               return
+           }
+           let userDB = UserDAO(uuid: userId,
+                                avatar: user.picture?.large,
+                                firstName: user.name?.first,
+                                gender: user.gender,
+                                lastName: user.name?.last,
+                                country: user.location?.country,
+                                latitude: user.location?.coordinates?.latitude,
+                                longitude: user.location?.coordinates?.longitude,
+                                email: user.email,
+                                birthdate: user.dob?.date,
+                                nationality: user.nat)
+           
+           DatabaseManager.shared.save(user: userDB)
+       }
+    
+    private func usersFromUsersDB() -> Array<User> {
+           let usersDAO = usersDB()
+           
+           return users(from: usersDAO)
+       }
+    
     private func users(from usersDAO: Array<UserDAO>) -> Array<User> {
         return usersDAO.compactMap { userDAO in
             return self.user(from: userDAO)
@@ -108,38 +143,6 @@ class DataManager {
                     birthdate: userDAO.birthdate)
     }
     
-    private func usersDB() -> Array<UserDAO> { //son privadas porque solo se van a utilizar desde aquí, no se pueden utilizar desde otras sitios.
-        return Array(DatabaseManager.shared.users())
-    }
-    
-    private func save(users: UsersDTO) {
-        guard let usersToSave = users.users else {
-            return
-        }
-        usersToSave.forEach{ save(user: $0) }
-    }
-    
-    private func save(user: UserDTO) {
-        guard let userId = user.email else {
-            return
-        }
-        let userDB = UserDAO(uuid: userId,
-                             avatar: user.picture?.large,
-                             firstName: user.name?.first,
-                             gender: user.gender,
-                             lastName: user.name?.last,
-                             country: user.location?.country,
-                             latitude: user.location?.coordinates?.latitude,
-                             longitude: user.location?.coordinates?.longitude,
-                             email: user.email,
-                             birthdate: user.dob?.date,
-                             nationality: user.nat)
-        
-        DatabaseManager.shared.save(user: userDB)
-    }
-    private func usersFromUsersDB() -> Array<User> {
-        let usersDAO = usersDB()
-        
-        return users(from: usersDAO)
-    }
+   
+   
 }

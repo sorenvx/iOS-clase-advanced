@@ -13,7 +13,7 @@ struct UserDTO: Codable {
     let name: NameDTO?
     let location: LocationDTO?
     let email: String?
-   // let login: LoginDTO?
+    let login: LoginDTO?
     let dob: DobDTO?
     let registered: RegisteredDTO?
     let phone: String?

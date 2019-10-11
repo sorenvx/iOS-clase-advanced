@@ -26,16 +26,17 @@ class PersonCollectionViewCell: UICollectionViewCell {
     
     override  func awakeFromNib() {
         super.awakeFromNib() //cuando la vista se carga por primera vez.
-        viewDetailViewCell.layer.cornerRadius = 8.0 // las esquinas redondas
+        viewDetailViewCell.layer.cornerRadius = 30.0 // las esquinas redondas
         viewDetailViewCell.configureShadow()
-        viewDetailViewCellFooter.layer.cornerRadius = 8.0
+        viewDetailViewCellFooter.layer.cornerRadius = 0
         viewDetailViewCellFooter.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
     
      //hay que crear una funcion para configurar las listas
     func configureCell(title: String? = nil, image: String? = nil) {
+        let url = URL(string: image ?? "")
         labelDetailViewCell.text = title
-        imageDetailtViewCell.image = UIImage(named: image ?? "")
+        imageDetailtViewCell.kf.setImage(with: url)
     }
 
 }

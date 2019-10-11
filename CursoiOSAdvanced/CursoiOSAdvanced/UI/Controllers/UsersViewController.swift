@@ -14,15 +14,36 @@ class UsersViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentOptions: UISegmentedControl!
     
+    // Value changed, cuando se modifica el valor
+    @IBAction func onListTypePressed(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            tableView.isHidden = false
+            collectionView.isHidden = true
+            tableView.reloadData()
+            
+        default:
+            tableView.isHidden = true
+            collectionView.isHidden = false
+            collectionView.reloadData()
+        }
+        
+    }
+    
     private var cellSpacing: CGFloat = 16.0
     private var users: Array<User> = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         // segmentOptions.selectedSegmentIndex = 0
         // Do any additional setup after loading the view.
+        
+        configure(tableView: tableView)
+        configure(collectionView: collectionView)
         loadUsers()
-        self.configure(tableView: tableView)
+        
     }
     
     
@@ -34,6 +55,14 @@ class UsersViewController: UIViewController {
                     return
                 }
                 self?.users = users
+                
+                switch self?.segmentOptions.selectedSegmentIndex {
+                case 0:
+                    self?.tableView.reloadData()
+                    
+                default:
+                    self?.collectionView.reloadData()
+                }
                 
             case .failure(let msg):
                 print ("Fallo al obtener usuarios: \(msg)")
@@ -49,6 +78,9 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     
     // Configure tableview with default options
     func configure(tableView: UITableView) {
+        
+        tableView.register(UINib(nibName: PersonTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: PersonTableViewCell.cellIdentifier)
+        tableView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y, left: 0, bottom: 0, right: 0)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -63,7 +95,10 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.cellIdentifier, for: indexPath) as? PersonTableViewCell else {
             return UITableViewCell()
         }
-        
+        if (indexPath.row < users.count) {
+            let user = users[indexPath.row]
+            cell.configureCell(image: user.avatar, name: user.name, email: user.email)
+        }
         return cell
     }
 }
@@ -73,6 +108,8 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     // Configure tableview with default options
     func configure(collectionView: UICollectionView) {
+        collectionView.register(UINib(nibName: PersonCollectionViewCell.cellIdentifier, bundle: nil), forCellWithReuseIdentifier: PersonCollectionViewCell.cellIdentifier)
+        collectionView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y + segmentOptions.bounds.height, left: 0, bottom: 0, right: 0)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -85,6 +122,10 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
             return UICollectionViewCell()
         }
         
+        if (indexPath.row < users.count) {
+            let user = users[indexPath.row]
+            cell.configureCell(title: user.firstName, image: user.avatar)
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

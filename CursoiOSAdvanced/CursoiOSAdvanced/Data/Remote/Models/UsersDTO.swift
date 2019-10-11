@@ -13,7 +13,7 @@ struct UsersDTO: Codable { // direct transfer object. el codable es para consegu
     let users: Array<UserDTO>?
     let info: InfoDTO?
     
-    private enum CondingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case users = "results"
         case info
     }

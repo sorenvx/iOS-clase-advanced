@@ -14,7 +14,7 @@ struct InfoDTO: Codable { // direct transfer object. el codable es para consegui
     let page: Int?
     let version: String?
     
-    private enum CondingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case seed
         case count = "results"
         case page
