@@ -13,11 +13,32 @@ class DataManager {
     static let shared = DataManager()
     private init() {}
     
+    var optionSelected: Int {
+        return DatabaseManager.shared.optionSelected
+    }
+    
+    private var usersDB: Array<UserDAO> { //son privadas porque solo se van a utilizar desde aquí, no se pueden utilizar desde otras sitios.
+        return Array(DatabaseManager.shared.users)
+    }
+    
+    private var usersFromUsersDB: Array<User> {
+        let usersDAO = usersDB
+        return users(from: usersDAO)
+    }
     
     
-    func users(completion: @escaping ServiceCompletion) {
+    func users(forceUpdate: Bool, completion: @escaping ServiceCompletion) {
+        switch forceUpdate{
+        case true:
+            usersForceUpdate(completion: completion)
+        case false:
+            users(completion: completion)
+        }
+    }
+    
+    private func users(completion: @escaping ServiceCompletion) {
         DispatchQueue.global(qos: .background).async { [weak self] in
-            if let users = self?.usersFromUsersDB(), users.count > 0 {
+            if let users = self?.usersFromUsersDB, users.count > 0 {
                 //devolver usersDB
                 DispatchQueue.main.async {
                     completion(.success(data: users))
@@ -29,7 +50,7 @@ class DataManager {
         }
     }
     
-    func usersForceUpdate(completion: @escaping ServiceCompletion) { //se pone escaping para que no elimine la información
+    private func usersForceUpdate(completion: @escaping ServiceCompletion) { //se pone escaping para que no elimine la información
         //llamas al servicio para obtener nuevos usuarios
         
         DispatchQueue.global(qos: .background).async {
@@ -49,7 +70,7 @@ class DataManager {
                     //guardar usuarios en base de datos
                     self?.save(users: usersDTO)
                     
-                    let users = self?.usersFromUsersDB()
+                    let users = self?.usersFromUsersDB
                     
                     
                     DispatchQueue.main.async {
@@ -90,8 +111,8 @@ class DataManager {
         }
     }
     
-    private func usersDB() -> Array<UserDAO> { //son privadas porque solo se van a utilizar desde aquí, no se pueden utilizar desde otras sitios.
-        return Array(DatabaseManager.shared.users())
+    func save(optionSelected: Int) {
+        DatabaseManager.shared.save(option: optionSelected)
     }
     
     private func save(users: UsersDTO) {
@@ -120,12 +141,7 @@ class DataManager {
            DatabaseManager.shared.save(user: userDB)
        }
     
-    private func usersFromUsersDB() -> Array<User> {
-           let usersDAO = usersDB()
-           
-           return users(from: usersDAO)
-       }
-    
+
     private func users(from usersDAO: Array<UserDAO>) -> Array<User> {
         return usersDAO.compactMap { userDAO in
             return self.user(from: userDAO)

@@ -16,61 +16,89 @@ class UsersViewController: UIViewController {
     
     // Value changed, cuando se modifica el valor
     @IBAction func onListTypePressed(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            tableView.isHidden = false
-            collectionView.isHidden = true
-            tableView.reloadData()
-            
-        default:
-            tableView.isHidden = true
-            collectionView.isHidden = false
-            collectionView.reloadData()
-        }
+        
+        //save selected option
+        DataManager.shared.save(optionSelected: sender.selectedSegmentIndex)
+        updateTypeList(optionSelected: sender.selectedSegmentIndex)
         
     }
     
     private var cellSpacing: CGFloat = 16.0
     private var users: Array<User> = []
+    private let refreshControlTB = UIRefreshControl()
+    private let refreshControlCV = UIRefreshControl()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-         // segmentOptions.selectedSegmentIndex = 0
+        configureRefreshControl()
+        // segmentOptions.selectedSegmentIndex = 0
         // Do any additional setup after loading the view.
-        
         configure(tableView: tableView)
         configure(collectionView: collectionView)
+        loadOptionSelected()
         loadUsers()
-        
+
+      
+    }
+
+    private func configureRefreshControl() {
+        // Configure Refresh Control
+        refreshControlTB.addTarget(self, action: #selector(refreshUsers), for: .valueChanged)
+        refreshControlCV.addTarget(self, action: #selector(refreshUsers), for: .valueChanged)
+    }
+  
+    private func loadOptionSelected() {
+        segmentOptions.selectedSegmentIndex = DataManager.shared.optionSelected
+    }
+    
+    private func loadUsers() {
+        DataManager.shared.users(forceUpdate: false) { [weak self] result in
+            self?.parseUsers(result: result)
+        }
+    }
+    
+    @objc func refreshUsers() {
+        DataManager.shared.users(forceUpdate: true) { [weak self] result in
+            self?.parseUsers(result: result)
+            
+        }
+    }
+    
+    private func parseUsers(result: ServiceResult) {
+        switch result {
+        case .success(let data):
+            guard let users = data as? Array<User> else {
+                return
+            }
+            self.users = users
+            updateTypeList(optionSelected: segmentOptions.selectedSegmentIndex)
+            
+        case .failure(let msg):
+            print ("Fallo al obtener usuarios: \(msg)")
+            
+        }
+        refreshControlTB.endRefreshing()
+        refreshControlCV.endRefreshing()
     }
     
     
-    private func loadUsers() {
-        DataManager.shared.users() { [weak self] result in
-            switch result {
-            case .success(let data):
-                guard let users = data as? Array<User> else {
-                    return
-                }
-                self?.users = users
-                
-                switch self?.segmentOptions.selectedSegmentIndex {
-                case 0:
-                    self?.tableView.reloadData()
-                    
-                default:
-                    self?.collectionView.reloadData()
-                }
-                
-            case .failure(let msg):
-                print ("Fallo al obtener usuarios: \(msg)")
-            }
+    private func updateTypeList(optionSelected: Int?) {
+        switch optionSelected {
+        case 0:
+            tableView.isHidden = false
+            collectionView.isHidden = true
+            tableView.reloadData()
+            
+            
+        default:
+            tableView.isHidden = true
+            collectionView.isHidden = false
+            collectionView.reloadData()
+        
         }
     }
 }
-
 
 
 // MARK: - Extension TableView methods
@@ -81,6 +109,7 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         
         tableView.register(UINib(nibName: PersonTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: PersonTableViewCell.cellIdentifier)
         tableView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y, left: 0, bottom: 0, right: 0)
+        tableView.refreshControl = refreshControlTB
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -97,19 +126,20 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         }
         if (indexPath.row < users.count) {
             let user = users[indexPath.row]
-            cell.configureCell(image: user.avatar, name: user.name, email: user.email)
+            cell.configureCell(image: user.avatar, name: user.name, email: user.email, birthdate: user.birthdate, nationality: user.nationality)
         }
         return cell
     }
 }
- 
+
 // MARK: - Extension CollectionView methods
 extension UsersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // Configure tableview with default options
     func configure(collectionView: UICollectionView) {
         collectionView.register(UINib(nibName: PersonCollectionViewCell.cellIdentifier, bundle: nil), forCellWithReuseIdentifier: PersonCollectionViewCell.cellIdentifier)
-        collectionView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y + segmentOptions.bounds.height, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y, left: 0, bottom: 0, right: 0)
+        collectionView.refreshControl = refreshControlCV
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -142,3 +172,4 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return CGSize(width: size, height: size)
     }
 }
+

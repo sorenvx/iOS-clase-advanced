@@ -11,24 +11,31 @@ import RealmSwift
 
 
 class DatabaseManager {
-    // MARK: - Singleton declaration
-    static let shared = DatabaseManager()
-    private init() {}
+   // MARK: - Singleton declaration
+   static let shared = DatabaseManager()
+   private init() {}
 
-    // MARK: - Properties
-    // Get the default Realm database
-    private let realm = try! Realm()
+   // MARK: - Properties
+   // Get the default Realm database
+    private var realm: Realm {
+        return try! Realm()
+    }
     
+    
+}
+
+// MARK: - Realm
+extension DatabaseManager {
+    
+    var users: Results<UserDAO> {
+        return realm.objects(UserDAO.self)
+    }
     
     func save(user: UserDAO) {
         try! realm.write {
             realm.add(user,
                       update: .modified)
         }
-    }
-    
-    func users() -> Results<UserDAO> {
-        return realm.objects(UserDAO.self)
     }
     
     func user(by id: String) -> UserDAO? {
@@ -50,32 +57,18 @@ class DatabaseManager {
 }
 
 
-enum ListOrGrid: Int {
-    case list
-    case grid
-}
 
-let notation: ListOrGrid = .list
-
-extension UserDefaults {
-
-    private struct List {
-
-        // MARK: - Constants
-
-        static let listOrGrid = "listOrGrid"
-
+// MARK: - Userdefaults
+extension DatabaseManager {
+    
+    var KEY_OPTION_SELECTED: String { //variables computadas IMPORTANTE
+        return "KEY_OPTION_SELECTED"
     }
-
-    // MARK: - Temperature Notation
-
-    class var listOrGrid: ListOrGrid {
-        let storedValue = UserDefaults.standard.integer(forKey: UserDefaults.List.listOrGrid)
-        return listOrGrid(rawValue: storedValue) ?? ListOrGrid.grid
+    var optionSelected: Int {
+        return UserDefaults.standard.integer(forKey: KEY_OPTION_SELECTED)
     }
-
-    class func set(listOrGrid: ListOrGrid) {
-        UserDefaults.standard.set(listOrGrid.rawValue, forKey: UserDefaults.List.listOrGrid)
+    
+    func save(option: Int) {
+        UserDefaults.standard.set(option, forKey: KEY_OPTION_SELECTED)
     }
-
 }
