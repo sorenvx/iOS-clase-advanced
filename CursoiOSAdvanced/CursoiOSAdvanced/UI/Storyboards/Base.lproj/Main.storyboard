@@ -55,7 +55,7 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Si1-iY-icO" secondAttribute="trailing" id="70f-RB-J0M"/>
                             <constraint firstItem="xZ8-xQ-PDj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XYV-GC-ofg"/>

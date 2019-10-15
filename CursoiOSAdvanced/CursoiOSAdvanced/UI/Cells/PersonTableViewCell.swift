@@ -36,7 +36,7 @@ class PersonTableViewCell: UITableViewCell {
         super.awakeFromNib() //cuando la vista se carga por primera vez.
         viewPersonViewCell.layer.cornerRadius = 20.0 // las esquinas redondas
         viewPersonViewCell.configureShadow()
-        viewPersonViewCell.configureShadow(color: UIColor.black)
+        viewPersonViewCell.configureShadow(color: UIColor.white)
         imagePersonViewCell.layer.cornerRadius = 50.0
     }
     
