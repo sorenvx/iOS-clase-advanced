@@ -38,7 +38,6 @@ class UsersViewController: UIViewController {
         configure(collectionView: collectionView)
         loadOptionSelected()
         loadUsers()
-
       
     }
 
@@ -107,11 +106,13 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     // Configure tableview with default options
     func configure(tableView: UITableView) {
         
+        // el register es para las celdas xib 
         tableView.register(UINib(nibName: PersonTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: PersonTableViewCell.cellIdentifier)
         tableView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y, left: 0, bottom: 0, right: 0)
         tableView.refreshControl = refreshControlTB
         tableView.dataSource = self
         tableView.delegate = self
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -128,6 +129,7 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
             let user = users[indexPath.row]
             cell.configureCell(image: user.avatar, name: user.name, email: user.email, birthdate: user.birthdate, nationality: user.nationality)
         }
+        
         return cell
     }
 }
@@ -141,7 +143,7 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
         collectionView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y, left: 0, bottom: 0, right: 0)
         collectionView.refreshControl = refreshControlCV
         collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView  .delegate = self
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.count
@@ -172,4 +174,5 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return CGSize(width: size, height: size)
     }
 }
+
 

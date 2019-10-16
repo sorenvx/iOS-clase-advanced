@@ -29,6 +29,12 @@
 		D97CD0BD2347C7C300F28404 /* RegisteredDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97CD0BC2347C7C300F28404 /* RegisteredDTO.swift */; };
 		D97CD0BF2347C80400F28404 /* PictureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97CD0BE2347C80400F28404 /* PictureDTO.swift */; };
 		D97CD0C12347CC7400F28404 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97CD0C02347CC7400F28404 /* DataManager.swift */; };
+		D9830A4423575E6D00A832D9 /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9830A4323575E6D00A832D9 /* UserDetail.storyboard */; };
+		D9830A4623575E8F00A832D9 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830A4523575E8F00A832D9 /* UserDetailViewController.swift */; };
+		D9830A482357623E00A832D9 /* PersonalDataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830A472357623E00A832D9 /* PersonalDataViewCell.swift */; };
+		D9830A4A2357624E00A832D9 /* MapViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830A492357624E00A832D9 /* MapViewCell.swift */; };
+		D9830A4C2357626500A832D9 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830A4B2357626500A832D9 /* CountryViewCell.swift */; };
+		D9830A4E2357627700A832D9 /* ContactDataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830A4D2357627700A832D9 /* ContactDataViewCell.swift */; };
 		D9859403234CEE9B00C97E98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9859402234CEE9B00C97E98 /* User.swift */; };
 		D989CC62234E50680019A33A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = D989CC61234E50680019A33A /* users.json */; };
 		D98B5189234B891800E42099 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B5188234B891800E42099 /* DatabaseManager.swift */; };
@@ -70,6 +76,12 @@
 		D97CD0BC2347C7C300F28404 /* RegisteredDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredDTO.swift; sourceTree = "<group>"; };
 		D97CD0BE2347C80400F28404 /* PictureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDTO.swift; sourceTree = "<group>"; };
 		D97CD0C02347CC7400F28404 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D9830A4323575E6D00A832D9 /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
+		D9830A4523575E8F00A832D9 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		D9830A472357623E00A832D9 /* PersonalDataViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataViewCell.swift; sourceTree = "<group>"; };
+		D9830A492357624E00A832D9 /* MapViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCell.swift; sourceTree = "<group>"; };
+		D9830A4B2357626500A832D9 /* CountryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
+		D9830A4D2357627700A832D9 /* ContactDataViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataViewCell.swift; sourceTree = "<group>"; };
 		D9859402234CEE9B00C97E98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D989CC61234E50680019A33A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		D98B5188234B891800E42099 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -252,6 +264,7 @@
 			children = (
 				D99E03EC23464E8F0050E045 /* SplashViewController.swift */,
 				D99E03EE234651290050E045 /* UsersViewController.swift */,
+				D9830A4523575E8F00A832D9 /* UserDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +275,7 @@
 				D95BD18B234523E7001336F8 /* Main.storyboard */,
 				D99E03EA23464B1A0050E045 /* Splash.storyboard */,
 				D95BD190234523EE001336F8 /* LaunchScreen.storyboard */,
+				D9830A4323575E6D00A832D9 /* UserDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -280,6 +294,10 @@
 				D99E03F6234664670050E045 /* PersonCollectionViewCell.swift */,
 				D99E03F2234662B20050E045 /* PersonTableViewCell.xib */,
 				D99E03F1234662B20050E045 /* PersonTableViewCell.swift */,
+				D9830A472357623E00A832D9 /* PersonalDataViewCell.swift */,
+				D9830A492357624E00A832D9 /* MapViewCell.swift */,
+				D9830A4B2357626500A832D9 /* CountryViewCell.swift */,
+				D9830A4D2357627700A832D9 /* ContactDataViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -354,6 +372,7 @@
 			files = (
 				D95BD192234523EE001336F8 /* LaunchScreen.storyboard in Resources */,
 				D95BD18F234523EE001336F8 /* Assets.xcassets in Resources */,
+				D9830A4423575E6D00A832D9 /* UserDetail.storyboard in Resources */,
 				D95BD18D234523E7001336F8 /* Main.storyboard in Resources */,
 				D99E03F9234664670050E045 /* PersonCollectionViewCell.xib in Resources */,
 				D99E03EB23464B1A0050E045 /* Splash.storyboard in Resources */,
@@ -425,15 +444,20 @@
 				D97CD0B92347C70E00F28404 /* LoginDTO.swift in Sources */,
 				D97CD0C12347CC7400F28404 /* DataManager.swift in Sources */,
 				D97CD0BF2347C80400F28404 /* PictureDTO.swift in Sources */,
+				D9830A4A2357624E00A832D9 /* MapViewCell.swift in Sources */,
 				D98B5189234B891800E42099 /* DatabaseManager.swift in Sources */,
 				D97CD0A52347B69600F28404 /* UserDAO.swift in Sources */,
 				D97CD0A92347BEF700F28404 /* UsersDTO.swift in Sources */,
+				D9830A4E2357627700A832D9 /* ContactDataViewCell.swift in Sources */,
 				D97CD0B32347C58A00F28404 /* StreetDTO.swift in Sources */,
 				D99E03EF234651290050E045 /* UsersViewController.swift in Sources */,
 				D95BD188234523E7001336F8 /* SceneDelegate.swift in Sources */,
+				D9830A482357623E00A832D9 /* PersonalDataViewCell.swift in Sources */,
 				D99E03ED23464E8F0050E045 /* SplashViewController.swift in Sources */,
 				D99E03F8234664670050E045 /* PersonCollectionViewCell.swift in Sources */,
 				D9859403234CEE9B00C97E98 /* User.swift in Sources */,
+				D9830A4C2357626500A832D9 /* CountryViewCell.swift in Sources */,
+				D9830A4623575E8F00A832D9 /* UserDetailViewController.swift in Sources */,
 				D98B518B234BAEBD00E42099 /* ApiManager.swift in Sources */,
 				D97CD0B72347C5E100F28404 /* TimezoneDTO.swift in Sources */,
 				D97CD0AB2347C0FB00F28404 /* InfoDTO.swift in Sources */,
