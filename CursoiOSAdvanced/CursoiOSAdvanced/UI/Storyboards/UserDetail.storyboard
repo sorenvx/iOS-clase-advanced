@@ -15,11 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dhu-kv-tpo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dhu-kv-tpo">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonalDataViewCell" rowHeight="171" id="Qgk-pM-bWw" customClass="PersonalDataViewCell" customModule="CursoiOSAdvanced" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonalDataViewCell" rowHeight="171" id="Qgk-pM-bWw" customClass="PersonalDataViewCell" customModule="CursoiOSAdvanced" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qgk-pM-bWw" id="DhL-j2-Zc9" customClass="PersonalDataViewCell" customModule="CursoiOSAdvanced" customModuleProvider="target">
@@ -119,7 +119,7 @@
                                             <outlet property="mViewCell" destination="eyi-xP-QYr" id="Ltf-Yd-U3J"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapViewCell" rowHeight="171" id="Ve2-Zb-cgM" customClass="MapViewCell" customModule="CursoiOSAdvanced" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapViewCell" rowHeight="171" id="Ve2-Zb-cgM" customClass="MapViewCell" customModule="CursoiOSAdvanced" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="199" width="414" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ve2-Zb-cgM" id="POn-C1-LNa">
@@ -153,9 +153,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="mViewCell" destination="fvw-YM-wEE" id="bfi-i2-9DF"/>
+                                            <outlet property="mapView" destination="07U-TJ-IQ1" id="x9A-XF-nPN"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryViewCell" rowHeight="171" id="wqu-gO-86x" customClass="CountryViewCell" customModule="CursoiOSAdvanced" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryViewCell" rowHeight="171" id="wqu-gO-86x" customClass="CountryViewCell" customModule="CursoiOSAdvanced" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="370" width="414" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wqu-gO-86x" id="DJa-xB-VHo">
@@ -202,7 +203,7 @@
                                             <outlet property="mViewCell" destination="DHj-0c-kNO" id="Hfh-rM-EUn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactDataViewCell" rowHeight="171" id="hdA-iv-BPE" customClass="ContactDataViewCell" customModule="CursoiOSAdvanced" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactDataViewCell" rowHeight="171" id="hdA-iv-BPE" customClass="ContactDataViewCell" customModule="CursoiOSAdvanced" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="541" width="414" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hdA-iv-BPE" id="TOH-GZ-6t5">
@@ -270,11 +271,14 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kp-0J-FL5">
                                 <rect key="frame" x="132" y="810" width="150" height="36"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="kkN-bm-Poe" eventType="touchUpInside" id="e1u-on-KO4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -290,7 +294,6 @@
                         <viewLayoutGuide key="safeArea" id="s1I-1J-Y9N"/>
                     </view>
                     <connections>
-                        <outlet property="buttonPressed" destination="1kp-0J-FL5" id="8Mh-0n-741"/>
                         <outlet property="tableView" destination="dhu-kv-tpo" id="wOi-Zm-dWM"/>
                     </connections>
                 </viewController>

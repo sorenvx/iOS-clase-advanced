@@ -136,7 +136,8 @@ class DataManager {
                                 longitude: user.location?.coordinates?.longitude,
                                 email: user.email,
                                 birthdate: user.dob?.date,
-                                nationality: user.nat)
+                                nationality: user.nat,
+                                city: user.location?.city)
            
            DatabaseManager.shared.save(user: userDB)
        }
@@ -156,9 +157,12 @@ class DataManager {
                     email: userDAO.email,
                     country: userDAO.country,
                     nationality: userDAO.nationality,
-                    birthdate: userDAO.birthdate)
-    }
-    
+                    birthdate: userDAO.birthdate,
+                    gender: userDAO.gender,
+                    latitude: userDAO.latitude,
+                    longitude: userDAO.longitude,
+                    city: userDAO.city)
+        }
    
    
 }

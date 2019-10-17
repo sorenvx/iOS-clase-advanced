@@ -17,6 +17,10 @@ class User {
     let birthdate: Date?
     let country: String?
     let nationality: String?
+    let gender: String?
+    let latitude: String?
+    let longitude: String?
+    let city: String?
     
     var name: String {
         var userName = ""
@@ -42,7 +46,7 @@ class User {
     }
     
     
-    init(id: String, avatar: String? = nil, firstName: String? = nil, lastName: String? = nil, email: String? = nil, country: String? = nil, nationality: String? = nil, birthdate: Date? = nil) {
+    init(id: String, avatar: String? = nil, firstName: String? = nil, lastName: String? = nil, email: String? = nil, country: String? = nil, nationality: String? = nil, birthdate: Date? = nil, gender: String? = nil, latitude: String? = nil, longitude: String? = nil, city: String? = nil) {
         
         self.id = id
         self.avatar = avatar
@@ -52,5 +56,9 @@ class User {
         self.birthdate = birthdate
         self.country = country
         self.nationality = nationality
+        self.gender = gender
+        self.latitude = latitude
+        self.longitude = longitude
+        self.city = city
     }
 }

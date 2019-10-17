@@ -11,7 +11,8 @@
         <!--Navigation Controller-->
         <scene sceneID="hqQ-Ka-cLR">
             <objects>
-                <navigationController id="xIA-cs-Dn3" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XZ2-Mo-Xqe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController modalPresentationStyle="fullScreen" id="xIA-cs-Dn3" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3sJ-vZ-M1y">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -20,14 +21,12 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="G5b-1b-ELf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XZ2-Mo-Xqe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-696" y="139"/>
         </scene>
-        <!--Users View Controller-->
+        <!--Users-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="UsersViewController" customModule="CursoiOSAdvanced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -87,7 +86,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BQB-rl-aTF"/>
+                    <navigationItem key="navigationItem" title="Users" id="BQB-rl-aTF">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0lX-YW-djh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="xZ8-xQ-PDj" id="gNN-Yh-SVR"/>
                         <outlet property="segmentOptions" destination="m1l-rb-A2i" id="KHv-YJ-qhH"/>
@@ -95,6 +96,7 @@
                         <segue destination="FDE-p6-vqu" kind="show" identifier="UserDetail" id="1tH-Lp-23x"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>

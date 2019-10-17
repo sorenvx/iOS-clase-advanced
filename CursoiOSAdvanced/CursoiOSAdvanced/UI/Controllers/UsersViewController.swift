@@ -27,6 +27,7 @@ class UsersViewController: UIViewController {
     private var users: Array<User> = []
     private let refreshControlTB = UIRefreshControl()
     private let refreshControlCV = UIRefreshControl()
+   
     
     
     override func viewDidLoad() {
@@ -120,6 +121,10 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         // esta función es para contar el numero de elementos
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          performSegue(withIdentifier: "UserDetail", sender: indexPath)
+      }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { // indexpath te dice la posición (numero de sección, y numero de fila)
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.cellIdentifier, for: indexPath) as? PersonTableViewCell else {
@@ -143,11 +148,14 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
         collectionView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y, left: 0, bottom: 0, right: 0)
         collectionView.refreshControl = refreshControlCV
         collectionView.dataSource = self
-        collectionView  .delegate = self
+        collectionView.delegate = self
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.count
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "UserDetail", sender: indexPath)
+    } // esto sirve para pasar a la vista de detalles cuando no se puede seleccionar la celda.
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonCollectionViewCell.cellIdentifier, for: indexPath) as? PersonCollectionViewCell else {
@@ -176,3 +184,18 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
 }
 
 
+
+
+
+extension UsersViewController {
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? UserDetailViewController,
+            let indexPath = sender as? IndexPath else {
+                return
+        }
+
+        destination.user = users[indexPath.row]
+    }
+
+}
