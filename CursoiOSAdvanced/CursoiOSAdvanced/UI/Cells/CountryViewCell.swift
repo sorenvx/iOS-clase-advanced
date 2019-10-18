@@ -24,8 +24,8 @@ class CountryViewCell: UITableViewCell {
         // MUY IMPORTANTE
     }
     
-    func configureCell(nationality: String? = nil, flag: String?, street: String? = nil) {
-        mLabelCell.text = nationality
+    func configureCell(country: String? = nil, flag: String? = nil) {
+        mLabelCell.text = country
         mImageViewCell.image = UIImage(named: "flag")
     }
 }

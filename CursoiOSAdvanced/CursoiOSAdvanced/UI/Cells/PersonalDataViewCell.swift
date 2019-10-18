@@ -31,13 +31,13 @@ class PersonalDataViewCell: UITableViewCell {
         // MUY IMPORTANTE
     }
        
-//       override  func awakeFromNib() {
-//           super.awakeFromNib() //cuando la vista se carga por primera vez.
-//           viewDetailViewCell.layer.cornerRadius = 30.0 // las esquinas redondas
+       override  func awakeFromNib() {
+           super.awakeFromNib() //cuando la vista se carga por primera vez.
+           mImageViewCell.layer.cornerRadius = 30.0 // las esquinas redondas
 //           viewDetailViewCell.configureShadow()
 //           viewDetailViewCellFooter.layer.cornerRadius = 0
 //           viewDetailViewCellFooter.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-//       }
+       }
        
     func configureCell(image: String? = nil, name: String?, gender: String? = nil, birthdate: Date? = nil, lastName: String? = nil, city: String? = nil) {
             let url = URL(string: image ?? "")

@@ -166,27 +166,27 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-0c-kNO">
                                                     <rect key="frame" x="8" y="8" width="398" height="155"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eah-ki-C1Y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="155"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buY-eT-4PL">
-                                                            <rect key="frame" x="329.5" y="113" width="60.5" height="34"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="34" id="5kA-Rw-mM3"/>
-                                                            </constraints>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buY-eT-4PL">
+                                                            <rect key="frame" x="155.5" y="14.5" width="87.5" height="27.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eah-ki-C1Y">
+                                                            <rect key="frame" x="77" y="50" width="245" height="97"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="97" id="nJU-rV-7ve"/>
+                                                                <constraint firstAttribute="width" constant="245" id="shl-xb-DiV"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="eah-ki-C1Y" secondAttribute="bottom" id="AYX-1O-mZB"/>
-                                                        <constraint firstAttribute="bottom" secondItem="buY-eT-4PL" secondAttribute="bottom" constant="8" id="Bw3-r6-Afl"/>
-                                                        <constraint firstItem="eah-ki-C1Y" firstAttribute="leading" secondItem="DHj-0c-kNO" secondAttribute="leading" id="Cvb-ju-U1i"/>
-                                                        <constraint firstAttribute="trailing" secondItem="eah-ki-C1Y" secondAttribute="trailing" id="mTI-3R-0i4"/>
-                                                        <constraint firstItem="eah-ki-C1Y" firstAttribute="top" secondItem="DHj-0c-kNO" secondAttribute="top" id="ojh-vE-kKI"/>
-                                                        <constraint firstAttribute="trailing" secondItem="buY-eT-4PL" secondAttribute="trailing" constant="8" id="tjx-3l-wku"/>
+                                                        <constraint firstItem="eah-ki-C1Y" firstAttribute="top" secondItem="buY-eT-4PL" secondAttribute="bottom" constant="8" id="B9i-ke-KWq"/>
+                                                        <constraint firstItem="buY-eT-4PL" firstAttribute="centerX" secondItem="DHj-0c-kNO" secondAttribute="centerX" id="MnT-NM-ffH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="eah-ki-C1Y" secondAttribute="trailing" constant="76" id="OEd-y0-3S8"/>
+                                                        <constraint firstItem="eah-ki-C1Y" firstAttribute="leading" secondItem="DHj-0c-kNO" secondAttribute="leading" constant="77" id="XhO-jn-6SL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="eah-ki-C1Y" secondAttribute="bottom" constant="8" id="pG5-Ye-JxI"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -271,7 +271,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kp-0J-FL5">
                                 <rect key="frame" x="132" y="810" width="150" height="36"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

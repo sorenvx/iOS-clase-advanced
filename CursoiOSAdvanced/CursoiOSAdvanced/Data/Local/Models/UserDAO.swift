@@ -24,6 +24,9 @@ class UserDAO: Object { //direct access object
     @objc dynamic var avatar: String?
     @objc dynamic var nationality: String?
     @objc dynamic var city: String?
+    @objc dynamic var street: String?
+    @objc dynamic var phone: String?
+    
     
     override static func primaryKey() -> String? {
         return "uuid"
@@ -39,7 +42,9 @@ class UserDAO: Object { //direct access object
                      email: String? = nil,
                      birthdate: Date? = nil,
                      nationality: String? = nil,
-                     city: String? = nil) {
+                     city: String? = nil,
+                     street: String? = nil,
+                     phone: String? = nil) {
         
         self.init()
         self.uuid = uuid
@@ -54,6 +59,8 @@ class UserDAO: Object { //direct access object
         self.birthdate = birthdate
         self.nationality = nationality
         self.city = city
+        self.street = street
+        self.phone = phone
     }
 }
 

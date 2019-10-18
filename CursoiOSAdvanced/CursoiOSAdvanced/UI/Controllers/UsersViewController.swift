@@ -185,8 +185,6 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
 
 
 
-
-
 extension UsersViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

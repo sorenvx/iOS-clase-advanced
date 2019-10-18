@@ -16,20 +16,26 @@ class MapViewCell: UITableViewCell {
     
     @IBOutlet weak var mapView: MKMapView!
     
-//    func maps() {
-//        // set initial location in Honolulu
-//        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-//        let regionRadius: CLLocationDistance = 1000
-//        func centerMapOnLocation(location: CLLocation) {
-//            let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
-//                                                      latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-//            mapView.setRegion(coordinateRegion, animated: true)
-//        }
-//        
-//        centerMapOnLocation(location: initialLocation)
-//    }
+
+    func map() {
+       
+    }
     
-    
-    
+    func configureCell(latitude: String? = nil, longitude: String? = nil) {
+        let location = CLLocationCoordinate2D(latitude: 21.283921,
+                                              longitude: 0.1246402)
+               
+               // 2
+               let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+               let region = MKCoordinateRegion(center: location, span: span)
+                   mapView.setRegion(region, animated: true)
+                   
+               //3
+               let annotation = MKPointAnnotation()
+               annotation.coordinate = location
+               annotation.title = "Big Ben"
+               annotation.subtitle = "London"
+               mapView.addAnnotation(annotation)
+    }
     
 }
