@@ -26,6 +26,6 @@ class CountryViewCell: UITableViewCell {
     
     func configureCell(country: String? = nil, flag: String? = nil) {
         mLabelCell.text = country
-        mImageViewCell.image = UIImage(named: "flag")
+        mImageViewCell.text = UIImage(named: "nat")
     }
 }
