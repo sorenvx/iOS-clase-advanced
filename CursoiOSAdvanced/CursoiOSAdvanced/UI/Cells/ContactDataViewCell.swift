@@ -25,6 +25,12 @@ class ContactDataViewCell: UITableViewCell {
         mLabelCell4.text = nil
         // MUY IMPORTANTE
     }
+    override func awakeFromNib() {
+        super.awakeFromNib() //cuando la vista se carga por primera vez.
+        mViewCell.layer.cornerRadius = 20.0 // las esquinas redondas
+        mViewCell.configureShadow()
+        mViewCell.configureShadow(color: UIColor.blue)
+    }
     
     func configureCell(email: String? = nil, phone: String?, street: String? = nil) {
              mLabelCell2.text = email

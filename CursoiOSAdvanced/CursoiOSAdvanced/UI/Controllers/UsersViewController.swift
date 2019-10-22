@@ -109,7 +109,7 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         
         // el register es para las celdas xib 
         tableView.register(UINib(nibName: PersonTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: PersonTableViewCell.cellIdentifier)
-        tableView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = topDistance(view: tableView)
         tableView.refreshControl = refreshControlTB
         tableView.dataSource = self
         tableView.delegate = self
@@ -145,11 +145,19 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
     // Configure tableview with default options
     func configure(collectionView: UICollectionView) {
         collectionView.register(UINib(nibName: PersonCollectionViewCell.cellIdentifier, bundle: nil), forCellWithReuseIdentifier: PersonCollectionViewCell.cellIdentifier)
-        collectionView.contentInset = UIEdgeInsets(top: segmentOptions.frame.origin.y, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = topDistance(view: collectionView)
         collectionView.refreshControl = refreshControlCV
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        
     }
+    
+    func topDistance(view: UIView) -> UIEdgeInsets {
+        return UIEdgeInsets(top: (segmentOptions.frame.origin.y - collectionView.frame.origin.y) + segmentOptions.frame.size.height, left: 0, bottom: 0, right: 0)
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.count
     }

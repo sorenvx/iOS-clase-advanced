@@ -12,17 +12,19 @@ import MapKit
 class UserDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBAction func buttonPressed(_ sender: UIButton) {
-//        let alert =  UIAlertController(title: "Eliminar usuario", message: "Vas a eliminar el usuario, ¿estás seguro?", preferredStyle: .alert) // tipo de view controller especial
-//        alert.addAction(UIAlertAction(title: "eliminar", style: .destructive, handler: { [weak self] _ in
-//
-//
-//
-//            self?.navigationController?.popViewController(animated: true) // lo saca de la pila y se muestra el anterior
-//            // tener cuidado al poner self en un closure, tiene que ser weak (para que sea opcional), y que no sume +1.
-//        }))
-//
-//        alert.addAction(UIAlertAction(title: "cancelar", style: .cancel))
-//        present(alert, animated: true) // mostrar la alerta en pantalla (y con los dos addAction se configura el aceptar y el eliminar)
+        let alert =  UIAlertController(title: "Eliminar usuario", message: "Vas a eliminar el usuario, ¿estás seguro?", preferredStyle: .alert) // tipo de view controller especial
+        alert.addAction(UIAlertAction(title: "eliminar", style: .destructive, handler: { [weak self] _ in
+            
+            //borrar el userDAO por id
+//            let user = UserDAO(uuid: "email")
+//            DatabaseManager.shared.delete(user: user)
+            self?.navigationController?.popViewController(animated: true) // lo saca de la pila y se muestra el anterior
+            // tener cuidado al poner self en un closure, tiene que ser weak (para que sea opcional), y que no sume +1.
+            
+        }))
+
+        alert.addAction(UIAlertAction(title: "cancelar", style: .cancel))
+        present(alert, animated: true) // mostrar la alerta en pantalla (y con los dos addAction se configura el aceptar y el eliminar)
     }
     
     private enum UserDeatilCellType: Int {
@@ -33,6 +35,8 @@ class UserDetailViewController: UIViewController {
         case contact
         
     }
+    
+    
     private let cellTypes = [UserDeatilCellType.personalData, UserDeatilCellType.map, UserDeatilCellType.location, UserDeatilCellType.contact]
     
     var user: User? = nil
@@ -43,6 +47,7 @@ class UserDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         configure(tableView: tableView)
         self.tableView.rowHeight = 171.0
+        title = user?.name
         
 
         // - MARK: Maps
@@ -60,11 +65,11 @@ extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         
     }
-    
+  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellTypes.count
     }
-    
+ 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { // indexpath te dice la posición (numero de sección, y numero de fila)
        var cell = UITableViewCell()
         
@@ -82,6 +87,27 @@ extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
       return cell
         
     }
+
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        var cellHeight: CGFloat = 0
+//
+//        switch cellTypes[indexPath.row] {
+//            case .personalData:
+//                cellHeight = PersonalDataViewCell.rowheight
+//
+//            case .map:
+//                cellHeight = MapViewCell.cellHeight
+//
+//            case .location:
+//                cellHeight = CountryViewCell.cellHeight
+//
+//            case .contact:
+//                cellHeight = ContactDataViewCell.cellHeight
+//        }
+//
+//        return cellHeight
+//    }
     
     func cellPersonalData(tablewView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonalDataViewCell.cellIdentifier, for: indexPath) as? PersonalDataViewCell else {
@@ -114,9 +140,10 @@ extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         //configure cell data
-        cell.configureCell(country: user?.country, flag: "")
+        cell.configureCell(country: user?.country, nationality: user?.nationality)
         return cell
     }
+    
     func cellContact(tablewView: UITableView, indexPath: IndexPath) -> UITableViewCell {
        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactDataViewCell.cellIdentifier, for: indexPath) as? ContactDataViewCell else {
             return UITableViewCell()

@@ -23,6 +23,7 @@ class User {
     let city: String?
     let street: String?
     let phone: String?
+
     
     var name: String {
         var userName = ""
