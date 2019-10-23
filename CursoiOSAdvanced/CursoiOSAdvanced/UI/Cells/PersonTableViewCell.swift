@@ -37,7 +37,7 @@ class PersonTableViewCell: UITableViewCell {
         viewPersonViewCell.layer.cornerRadius = 20.0 // las esquinas redondas
         viewPersonViewCell.configureShadow()
         viewPersonViewCell.configureShadow(color: UIColor.white)
-        imagePersonViewCell.layer.cornerRadius = 50.0
+        imagePersonViewCell.layer.cornerRadius = imagePersonViewCell.frame.width / 2
     }
     
     //hay que crear una funcion para configurar las listas

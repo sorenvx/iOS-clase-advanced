@@ -35,6 +35,7 @@
 		D9830A4A2357624E00A832D9 /* MapViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830A492357624E00A832D9 /* MapViewCell.swift */; };
 		D9830A4C2357626500A832D9 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830A4B2357626500A832D9 /* CountryViewCell.swift */; };
 		D9830A4E2357627700A832D9 /* ContactDataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830A4D2357627700A832D9 /* ContactDataViewCell.swift */; };
+		D98347202360C8D0002E2DF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D983471F2360C8D0002E2DF9 /* GoogleService-Info.plist */; };
 		D9859403234CEE9B00C97E98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9859402234CEE9B00C97E98 /* User.swift */; };
 		D989CC62234E50680019A33A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = D989CC61234E50680019A33A /* users.json */; };
 		D98B5189234B891800E42099 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B5188234B891800E42099 /* DatabaseManager.swift */; };
@@ -82,6 +83,7 @@
 		D9830A492357624E00A832D9 /* MapViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCell.swift; sourceTree = "<group>"; };
 		D9830A4B2357626500A832D9 /* CountryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
 		D9830A4D2357627700A832D9 /* ContactDataViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataViewCell.swift; sourceTree = "<group>"; };
+		D983471F2360C8D0002E2DF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9859402234CEE9B00C97E98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D989CC61234E50680019A33A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		D98B5188234B891800E42099 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D95BD193234523EE001336F8 /* Info.plist */,
+				D983471F2360C8D0002E2DF9 /* GoogleService-Info.plist */,
 				D99E03E42346445A0050E045 /* App */,
 				D99E03E52346446D0050E045 /* Resources */,
 				D99E03E6234644820050E045 /* Data */,
@@ -322,6 +325,7 @@
 				D95BD17F234523E7001336F8 /* Frameworks */,
 				D95BD180234523E7001336F8 /* Resources */,
 				3B20444CD0BFDA555178F4F0 /* [CP] Embed Pods Frameworks */,
+				D92EB6222360D63D00BBE625 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -378,6 +382,7 @@
 				D99E03EB23464B1A0050E045 /* Splash.storyboard in Resources */,
 				D989CC62234E50680019A33A /* users.json in Resources */,
 				D97CD09F23478DE300F28404 /* biker.json in Resources */,
+				D98347202360C8D0002E2DF9 /* GoogleService-Info.plist in Resources */,
 				D97CD0A1234797B000F28404 /* social.json in Resources */,
 				D99E03F4234662B20050E045 /* PersonTableViewCell.xib in Resources */,
 			);
@@ -424,6 +429,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CursoiOSAdvanced/Pods-CursoiOSAdvanced-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D92EB6222360D63D00BBE625 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

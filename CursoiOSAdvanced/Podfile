@@ -10,4 +10,10 @@ target 'CursoiOSAdvanced' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'lottie-ios'
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  # Pods for PodTest
+  pod 'Fabric'
+  pod 'Crashlytics'
+
 end

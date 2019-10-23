@@ -36,6 +36,20 @@ class DataManager {
         }
     }
     
+    func delete(user id: String, completion: @escaping ServiceCompletion) {
+        DispatchQueue.global(qos: .background).async {
+            guard let userDAO = DatabaseManager.shared.user(by: id) else {
+                DispatchQueue.main.async {
+                completion(.success(data: nil))
+                }
+                return
+            }
+                DatabaseManager.shared.delete(user: userDAO)
+            DispatchQueue.main.async {
+                completion(.success(data: nil))
+            }
+        }
+    }
     private func users(completion: @escaping ServiceCompletion) {
         DispatchQueue.global(qos: .background).async { [weak self] in
             if let users = self?.usersFromUsersDB, users.count > 0 {

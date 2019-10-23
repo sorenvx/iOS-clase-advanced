@@ -38,8 +38,11 @@ class UsersViewController: UIViewController {
         configure(tableView: tableView)
         configure(collectionView: collectionView)
         loadOptionSelected()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadUsers()
-      
     }
 
     private func configureRefreshControl() {
