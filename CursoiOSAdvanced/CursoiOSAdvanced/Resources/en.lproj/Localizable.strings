@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  CursoiOSAdvanced
+
+  Created by Dev2 on 24/10/2019.
+  Copyright © 2019 clasegetafe. All rights reserved.
+*/
+
+
+
+"alert_delete_user_title" = "Delete user";
+"msg_delete_user" = "You're going to delete %@, are you sure?";
+"txt_delete" = "delete";
+"txt_cancel" = "cancel";

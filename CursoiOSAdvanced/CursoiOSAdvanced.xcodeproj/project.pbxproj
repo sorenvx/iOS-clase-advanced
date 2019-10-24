@@ -37,6 +37,18 @@
 		D9830A4E2357627700A832D9 /* ContactDataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830A4D2357627700A832D9 /* ContactDataViewCell.swift */; };
 		D98347202360C8D0002E2DF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D983471F2360C8D0002E2DF9 /* GoogleService-Info.plist */; };
 		D9859403234CEE9B00C97E98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9859402234CEE9B00C97E98 /* User.swift */; };
+		D98749432361EA4100B4EA92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98749452361EA4100B4EA92 /* Localizable.strings */; };
+		D98749482361F38D00B4EA92 /* AddUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98749472361F38D00B4EA92 /* AddUser.storyboard */; };
+		D987494A2361F3BD00B4EA92 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98749492361F3BD00B4EA92 /* AddUserViewController.swift */; };
+		D987494C2362032500B4EA92 /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D987494B2362032500B4EA92 /* NameCell.swift */; };
+		D987494E2362033400B4EA92 /* EmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D987494D2362033400B4EA92 /* EmailCell.swift */; };
+		D98749502362034300B4EA92 /* GenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D987494F2362034300B4EA92 /* GenderCell.swift */; };
+		D98749522362035500B4EA92 /* BirthdateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98749512362035500B4EA92 /* BirthdateCell.swift */; };
+		D98749542362036400B4EA92 /* NationalityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98749532362036400B4EA92 /* NationalityCell.swift */; };
+		D98749562362036F00B4EA92 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98749552362036F00B4EA92 /* CountryCell.swift */; };
+		D98749582362039200B4EA92 /* CoordinatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98749572362039200B4EA92 /* CoordinatesCell.swift */; };
+		D987495A236203AC00B4EA92 /* GenderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9874959236203AC00B4EA92 /* GenderCollectionViewCell.swift */; };
+		D987495C236203BD00B4EA92 /* NationalityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D987495B236203BD00B4EA92 /* NationalityCollectionViewCell.swift */; };
 		D989CC62234E50680019A33A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = D989CC61234E50680019A33A /* users.json */; };
 		D98B5189234B891800E42099 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B5188234B891800E42099 /* DatabaseManager.swift */; };
 		D98B518B234BAEBD00E42099 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B518A234BAEBD00E42099 /* ApiManager.swift */; };
@@ -85,6 +97,19 @@
 		D9830A4D2357627700A832D9 /* ContactDataViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataViewCell.swift; sourceTree = "<group>"; };
 		D983471F2360C8D0002E2DF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9859402234CEE9B00C97E98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D98749442361EA4100B4EA92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D98749462361EA9000B4EA92 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D98749472361F38D00B4EA92 /* AddUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddUser.storyboard; sourceTree = "<group>"; };
+		D98749492361F3BD00B4EA92 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		D987494B2362032500B4EA92 /* NameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
+		D987494D2362033400B4EA92 /* EmailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCell.swift; sourceTree = "<group>"; };
+		D987494F2362034300B4EA92 /* GenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderCell.swift; sourceTree = "<group>"; };
+		D98749512362035500B4EA92 /* BirthdateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateCell.swift; sourceTree = "<group>"; };
+		D98749532362036400B4EA92 /* NationalityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalityCell.swift; sourceTree = "<group>"; };
+		D98749552362036F00B4EA92 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		D98749572362039200B4EA92 /* CoordinatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesCell.swift; sourceTree = "<group>"; };
+		D9874959236203AC00B4EA92 /* GenderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderCollectionViewCell.swift; sourceTree = "<group>"; };
+		D987495B236203BD00B4EA92 /* NationalityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalityCollectionViewCell.swift; sourceTree = "<group>"; };
 		D989CC61234E50680019A33A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		D98B5188234B891800E42099 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D98B518A234BAEBD00E42099 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -236,6 +261,7 @@
 				D97CD0A0234797B000F28404 /* social.json */,
 				D97CD09E23478DE300F28404 /* biker.json */,
 				D95BD18E234523EE001336F8 /* Assets.xcassets */,
+				D98749452361EA4100B4EA92 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -268,6 +294,7 @@
 				D99E03EC23464E8F0050E045 /* SplashViewController.swift */,
 				D99E03EE234651290050E045 /* UsersViewController.swift */,
 				D9830A4523575E8F00A832D9 /* UserDetailViewController.swift */,
+				D98749492361F3BD00B4EA92 /* AddUserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -279,6 +306,7 @@
 				D99E03EA23464B1A0050E045 /* Splash.storyboard */,
 				D95BD190234523EE001336F8 /* LaunchScreen.storyboard */,
 				D9830A4323575E6D00A832D9 /* UserDetail.storyboard */,
+				D98749472361F38D00B4EA92 /* AddUser.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -301,6 +329,15 @@
 				D9830A492357624E00A832D9 /* MapViewCell.swift */,
 				D9830A4B2357626500A832D9 /* CountryViewCell.swift */,
 				D9830A4D2357627700A832D9 /* ContactDataViewCell.swift */,
+				D987494B2362032500B4EA92 /* NameCell.swift */,
+				D987494D2362033400B4EA92 /* EmailCell.swift */,
+				D987494F2362034300B4EA92 /* GenderCell.swift */,
+				D98749512362035500B4EA92 /* BirthdateCell.swift */,
+				D98749532362036400B4EA92 /* NationalityCell.swift */,
+				D98749552362036F00B4EA92 /* CountryCell.swift */,
+				D98749572362039200B4EA92 /* CoordinatesCell.swift */,
+				D9874959236203AC00B4EA92 /* GenderCollectionViewCell.swift */,
+				D987495B236203BD00B4EA92 /* NationalityCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -358,6 +395,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = D95BD179234523E7001336F8;
 			productRefGroup = D95BD183234523E7001336F8 /* Products */;
@@ -375,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95BD192234523EE001336F8 /* LaunchScreen.storyboard in Resources */,
+				D98749432361EA4100B4EA92 /* Localizable.strings in Resources */,
 				D95BD18F234523EE001336F8 /* Assets.xcassets in Resources */,
 				D9830A4423575E6D00A832D9 /* UserDetail.storyboard in Resources */,
 				D95BD18D234523E7001336F8 /* Main.storyboard in Resources */,
@@ -384,6 +423,7 @@
 				D97CD09F23478DE300F28404 /* biker.json in Resources */,
 				D98347202360C8D0002E2DF9 /* GoogleService-Info.plist in Resources */,
 				D97CD0A1234797B000F28404 /* social.json in Resources */,
+				D98749482361F38D00B4EA92 /* AddUser.storyboard in Resources */,
 				D99E03F4234662B20050E045 /* PersonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,16 +495,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D97CD0AF2347C40C00F28404 /* NameDTO.swift in Sources */,
+				D98749522362035500B4EA92 /* BirthdateCell.swift in Sources */,
 				D95BD186234523E7001336F8 /* AppDelegate.swift in Sources */,
 				D97CD0B12347C46E00F28404 /* LocationDTO.swift in Sources */,
 				D99E03F3234662B20050E045 /* PersonTableViewCell.swift in Sources */,
 				D99E03FC234665A00050E045 /* UIView+Utils.swift in Sources */,
+				D98749582362039200B4EA92 /* CoordinatesCell.swift in Sources */,
 				D97CD0BD2347C7C300F28404 /* RegisteredDTO.swift in Sources */,
 				D97CD0BB2347C77F00F28404 /* DobDTO.swift in Sources */,
+				D98749562362036F00B4EA92 /* CountryCell.swift in Sources */,
+				D98749542362036400B4EA92 /* NationalityCell.swift in Sources */,
 				D97CD0AD2347C26400F28404 /* UserDTO.swift in Sources */,
 				D97CD0B52347C5B700F28404 /* CoordinatesDTO.swift in Sources */,
 				D97CD0B92347C70E00F28404 /* LoginDTO.swift in Sources */,
 				D97CD0C12347CC7400F28404 /* DataManager.swift in Sources */,
+				D987495A236203AC00B4EA92 /* GenderCollectionViewCell.swift in Sources */,
 				D97CD0BF2347C80400F28404 /* PictureDTO.swift in Sources */,
 				D9830A4A2357624E00A832D9 /* MapViewCell.swift in Sources */,
 				D98B5189234B891800E42099 /* DatabaseManager.swift in Sources */,
@@ -472,13 +517,18 @@
 				D97CD0A92347BEF700F28404 /* UsersDTO.swift in Sources */,
 				D9830A4E2357627700A832D9 /* ContactDataViewCell.swift in Sources */,
 				D97CD0B32347C58A00F28404 /* StreetDTO.swift in Sources */,
+				D98749502362034300B4EA92 /* GenderCell.swift in Sources */,
+				D987494E2362033400B4EA92 /* EmailCell.swift in Sources */,
 				D99E03EF234651290050E045 /* UsersViewController.swift in Sources */,
 				D95BD188234523E7001336F8 /* SceneDelegate.swift in Sources */,
 				D9830A482357623E00A832D9 /* PersonalDataViewCell.swift in Sources */,
+				D987494C2362032500B4EA92 /* NameCell.swift in Sources */,
 				D99E03ED23464E8F0050E045 /* SplashViewController.swift in Sources */,
 				D99E03F8234664670050E045 /* PersonCollectionViewCell.swift in Sources */,
 				D9859403234CEE9B00C97E98 /* User.swift in Sources */,
+				D987494A2361F3BD00B4EA92 /* AddUserViewController.swift in Sources */,
 				D9830A4C2357626500A832D9 /* CountryViewCell.swift in Sources */,
+				D987495C236203BD00B4EA92 /* NationalityCollectionViewCell.swift in Sources */,
 				D9830A4623575E8F00A832D9 /* UserDetailViewController.swift in Sources */,
 				D98B518B234BAEBD00E42099 /* ApiManager.swift in Sources */,
 				D97CD0B72347C5E100F28404 /* TimezoneDTO.swift in Sources */,
@@ -505,6 +555,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		D98749452361EA4100B4EA92 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D98749442361EA4100B4EA92 /* en */,
+				D98749462361EA9000B4EA92 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -512,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -572,6 +632,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -629,7 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WVR9R599NX;
 				INFOPLIST_FILE = CursoiOSAdvanced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -650,7 +711,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WVR9R599NX;
 				INFOPLIST_FILE = CursoiOSAdvanced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

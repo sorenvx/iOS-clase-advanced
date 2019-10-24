@@ -12,8 +12,11 @@ import MapKit
 class UserDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBAction func buttonPressed(_ sender: UIButton) {
-        let alert =  UIAlertController(title: "Eliminar usuario", message: "Vas a eliminar el usuario, ¿estás seguro?", preferredStyle: .alert) // tipo de view controller especial
-        alert.addAction(UIAlertAction(title: "eliminar", style: .destructive, handler: { [weak self] _ in
+        guard let userName = user?.name else {
+            return
+        }
+        let alert =  UIAlertController(title: NSLocalizedString("alert_delete_user_title", comment: ""), message: String(format: NSLocalizedString("msg_delete_user", comment: ""), userName), preferredStyle: .alert) // tipo de view controller especial
+        alert.addAction(UIAlertAction(title: NSLocalizedString("txt_delete", comment: ""), style: .destructive, handler: { [weak self] _ in
             
             guard let userId = self?.user?.id else {
                 return
@@ -24,7 +27,7 @@ class UserDetailViewController: UIViewController {
             }
         }))
         
-        alert.addAction(UIAlertAction(title: "cancelar", style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("txt_cancel", comment: ""), style: .cancel))
         present(alert, animated: true) // mostrar la alerta en pantalla (y con los dos addAction se configura el aceptar y el eliminar)
     }
     

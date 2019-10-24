@@ -88,6 +88,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Users" id="BQB-rl-aTF">
                         <barButtonItem key="backBarButtonItem" title=" " id="0lX-YW-djh"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ucr-M3-Mc5">
+                            <connections>
+                                <segue destination="oTJ-TD-giI" kind="presentation" id="haR-dB-ole"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="xZ8-xQ-PDj" id="gNN-Yh-SVR"/>
@@ -99,6 +104,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+        <!--AddUser-->
+        <scene sceneID="Jan-iv-yBK">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddUser" storyboardName="AddUser" id="oTJ-TD-giI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S05-1V-WJb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="-54"/>
         </scene>
         <!--UserDetail-->
         <scene sceneID="Jsa-Lb-lUV">
