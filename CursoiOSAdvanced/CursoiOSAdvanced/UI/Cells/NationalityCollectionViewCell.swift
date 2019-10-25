@@ -16,4 +16,16 @@ class NationalityCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var mView: UIView!
     @IBOutlet weak var mLabel: UILabel!
     
+    override func awakeFromNib() {
+           super.awakeFromNib()
+           let tap = UITapGestureRecognizer(target: self, action: #selector(NationalityCollectionViewCell.tapFunction))
+           mView.isUserInteractionEnabled = true
+           mView.addGestureRecognizer(tap)
+       }
+       
+       @IBAction func tapFunction(sender: UITapGestureRecognizer) {
+           print("tap working")
+        mView.backgroundColor = UIColor.systemTeal
+       }
+    
 }

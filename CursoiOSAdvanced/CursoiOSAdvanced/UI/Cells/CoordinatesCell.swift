@@ -11,6 +11,7 @@ import MapKit
 
 class CoordinatesCell: UITableViewCell {
     static let cellIdentifier = String(describing: CoordinatesCell.self)
+    static let cellHeight: CGFloat = 275
     
     @IBOutlet weak var mView: UIView!
     @IBOutlet weak var mLabel1: UILabel!

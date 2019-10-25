@@ -10,6 +10,9 @@ import UIKit
 
 class EmailCell: UITableViewCell {
     static let cellIdentifier = String(describing: EmailCell.self)
+    static let cellHeight: CGFloat = 165
+    
+    
     
     @IBOutlet weak var mView: UIView!
     @IBOutlet weak var mLabel1: UILabel!

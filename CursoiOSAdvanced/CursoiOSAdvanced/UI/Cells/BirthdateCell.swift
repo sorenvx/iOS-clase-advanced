@@ -10,6 +10,7 @@ import UIKit
 
 class BirthdateCell: UITableViewCell {
     static let cellIdentifier = String(describing: BirthdateCell.self)
+    static let cellHeight: CGFloat = 126
     
     @IBOutlet weak var mView: UIView!
     @IBOutlet weak var mLabel: UILabel!

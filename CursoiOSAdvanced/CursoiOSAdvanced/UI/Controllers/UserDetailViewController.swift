@@ -89,25 +89,25 @@ extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
         
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        var cellHeight: CGFloat = 0
-//
-//        switch cellTypes[indexPath.row] {
-//            case .personalData:
-//                cellHeight = PersonalDataViewCell.cellHeight
-//
-//            case .map:
-//                cellHeight = MapViewCell.cellHeight
-//
-//            case .location:
-//                cellHeight = CountryViewCell.rowHeight
-//
-//            case .contact:
-//                cellHeight = ContactDataViewCell.cellHeight
+//        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//            var cellHeight: CGFloat = 171.0
+//    
+//            switch cellTypes[indexPath.row] {
+//                case .personalData:
+//                    cellHeight = PersonalDataViewCell.cellHeight
+//    
+//                case .map:
+//                    cellHeight = MapViewCell.cellHeight
+//    
+//                case .location:
+//                    cellHeight = CountryViewCell.rowHeight
+//    
+//                case .contact:
+//                    cellHeight = ContactDataViewCell.cellHeight
+//            }
+//    
+//            return cellHeight
 //        }
-//
-//        return cellHeight
-//    }
     
     func cellPersonalData(tablewView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonalDataViewCell.cellIdentifier, for: indexPath) as? PersonalDataViewCell else {

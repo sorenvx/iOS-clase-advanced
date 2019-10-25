@@ -30,10 +30,27 @@ class AddUserViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        self.tableView.rowHeight = 171.0
+//        self.tableView.rowHeight = 165.0
+        //        heightRow()
         configure(tableView: tableView)
-        title = "Add new user"
         
+        
+    }
+    
+    func heightRow() {
+        if tableView.tag == 1 && tableView.tag == 2 {
+            self.tableView.rowHeight = 165.0
+        } else if tableView.tag == 3 {
+            self.tableView.rowHeight = 212.0
+        } else if tableView.tag == 4 {
+            self.tableView.rowHeight = 126.0
+        } else if tableView.tag == 5 {
+            self.tableView.rowHeight = 105.0
+        } else if tableView.tag == 6 {
+            self.tableView.rowHeight = 138.0
+        } else if tableView.tag == 7 {
+            self.tableView.rowHeight = 250.0
+        }
     }
     
     
@@ -42,10 +59,11 @@ class AddUserViewController: UIViewController {
 extension AddUserViewController: UITableViewDataSource, UITableViewDelegate {
     
     func configure(tableView: UITableView) {
-           tableView.dataSource = self
-           tableView.delegate = self
-           
-       }
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellTypes.count
     }
@@ -54,7 +72,7 @@ extension AddUserViewController: UITableViewDataSource, UITableViewDelegate {
         var cell = UITableViewCell()
         
         switch cellTypes[indexPath.row] {
-        
+            
         case .name:
             cell = cellName(tablewView: tableView, indexPath: indexPath)
         case .email:
@@ -69,13 +87,35 @@ extension AddUserViewController: UITableViewDataSource, UITableViewDelegate {
             cell = cellCountry(tablewView: tableView, indexPath: indexPath)
         case .coordinates:
             cell = cellCoordinates(tablewView: tableView, indexPath: indexPath)
-        
+            
         }
         return cell
+        
+        
     }
     
-    
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var cellHeight: CGFloat = 171.0
+        
+        switch cellTypes[indexPath.row] {
+        case .name:
+            cellHeight = NameCell.cellHeight
+        case .email:
+            cellHeight = EmailCell.cellHeight
+        case .gender:
+            cellHeight = GenderCell.cellHeight
+        case .birthdate:
+            cellHeight = BirthdateCell.cellHeight
+        case .nationality:
+            cellHeight = NationalityCell.cellHeight
+        case  .country:
+            cellHeight = CountryCell.cellHeight
+        case .coordinates:
+            cellHeight = CoordinatesCell.cellHeight
+        }
+        
+        return cellHeight
+    }
     
     
     

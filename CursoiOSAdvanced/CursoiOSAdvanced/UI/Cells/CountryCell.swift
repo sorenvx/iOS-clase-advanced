@@ -10,6 +10,7 @@ import UIKit
 
 class CountryCell: UITableViewCell {
     static let cellIdentifier = String(describing: CountryCell.self)
+    static let cellHeight: CGFloat = 138
     
     @IBOutlet weak var mView: UIView!
     @IBOutlet weak var mLabel1: UILabel!

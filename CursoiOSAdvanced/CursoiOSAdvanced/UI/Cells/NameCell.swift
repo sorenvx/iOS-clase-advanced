@@ -10,6 +10,7 @@ import UIKit
 
 class NameCell: UITableViewCell {
      static let cellIdentifier = String(describing: NameCell.self)
+    static let cellHeight: CGFloat = 165
     
     @IBOutlet weak var mView: UIView!
     @IBOutlet weak var mImage: UIImageView!
