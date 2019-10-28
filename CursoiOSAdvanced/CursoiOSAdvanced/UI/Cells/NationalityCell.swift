@@ -43,7 +43,6 @@ extension NationalityCell: UICollectionViewDataSource, UICollectionViewDelegate,
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NationalityCollectionViewCell.cellIdentifier, for: indexPath) as? NationalityCollectionViewCell else {
             return UICollectionViewCell()
         }
-        //            let flagEmoji = flag(country: flagOptions)
         cell.mLabel.text = flag(country: flagOptions[indexPath.row])
         
         return cell

@@ -47,7 +47,6 @@
 		D98749542362036400B4EA92 /* NationalityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98749532362036400B4EA92 /* NationalityCell.swift */; };
 		D98749562362036F00B4EA92 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98749552362036F00B4EA92 /* CountryCell.swift */; };
 		D98749582362039200B4EA92 /* CoordinatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98749572362039200B4EA92 /* CoordinatesCell.swift */; };
-		D987495A236203AC00B4EA92 /* GenderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9874959236203AC00B4EA92 /* GenderCollectionViewCell.swift */; };
 		D987495C236203BD00B4EA92 /* NationalityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D987495B236203BD00B4EA92 /* NationalityCollectionViewCell.swift */; };
 		D989CC62234E50680019A33A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = D989CC61234E50680019A33A /* users.json */; };
 		D98B5189234B891800E42099 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B5188234B891800E42099 /* DatabaseManager.swift */; };
@@ -108,7 +107,6 @@
 		D98749532362036400B4EA92 /* NationalityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalityCell.swift; sourceTree = "<group>"; };
 		D98749552362036F00B4EA92 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		D98749572362039200B4EA92 /* CoordinatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesCell.swift; sourceTree = "<group>"; };
-		D9874959236203AC00B4EA92 /* GenderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderCollectionViewCell.swift; sourceTree = "<group>"; };
 		D987495B236203BD00B4EA92 /* NationalityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalityCollectionViewCell.swift; sourceTree = "<group>"; };
 		D989CC61234E50680019A33A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		D98B5188234B891800E42099 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -336,7 +334,6 @@
 				D98749532362036400B4EA92 /* NationalityCell.swift */,
 				D98749552362036F00B4EA92 /* CountryCell.swift */,
 				D98749572362039200B4EA92 /* CoordinatesCell.swift */,
-				D9874959236203AC00B4EA92 /* GenderCollectionViewCell.swift */,
 				D987495B236203BD00B4EA92 /* NationalityCollectionViewCell.swift */,
 			);
 			path = Cells;
@@ -509,7 +506,6 @@
 				D97CD0B52347C5B700F28404 /* CoordinatesDTO.swift in Sources */,
 				D97CD0B92347C70E00F28404 /* LoginDTO.swift in Sources */,
 				D97CD0C12347CC7400F28404 /* DataManager.swift in Sources */,
-				D987495A236203AC00B4EA92 /* GenderCollectionViewCell.swift in Sources */,
 				D97CD0BF2347C80400F28404 /* PictureDTO.swift in Sources */,
 				D9830A4A2357624E00A832D9 /* MapViewCell.swift in Sources */,
 				D98B5189234B891800E42099 /* DatabaseManager.swift in Sources */,

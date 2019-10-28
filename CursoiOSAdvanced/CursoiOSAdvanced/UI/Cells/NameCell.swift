@@ -22,3 +22,11 @@ class NameCell: UITableViewCell {
     
     
 }
+
+extension NameCell: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}

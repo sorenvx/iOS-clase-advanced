@@ -13,15 +13,14 @@ class GenderCell: UITableViewCell {
     static let cellHeight: CGFloat = 112
     
     @IBOutlet weak var mView: UIView!
-    @IBOutlet weak var mCollectionView: UICollectionView!
+
+    @IBOutlet weak var genderOptions: UISegmentedControl!
     @IBOutlet weak var mLabel: UILabel!
     
-    let genderOptions = ["Hombre","Mujer"]
-    var selectedIndexPath: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configure(collectionView: mCollectionView)
+
     }
     
 
@@ -30,35 +29,4 @@ class GenderCell: UITableViewCell {
 
 
 
-extension GenderCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    // Configure tableview with default options
-    func configure(collectionView: UICollectionView) {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        genderOptions.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenderCollectionViewCell.cellIdentifier, for: indexPath) as? GenderCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        
-        cell.mLabel.text = genderOptions[indexPath.row]
-        
-        return cell
-    }
-    
 
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
- 
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-
-    }
-}

@@ -26,34 +26,20 @@ class AddUserViewController: UIViewController {
         case coordinates
     }
     
-    private let cellTypes = [AddUserCellType.name, AddUserCellType.email, AddUserCellType.gender, AddUserCellType.birthdate, AddUserCellType.nationality, AddUserCellType.country, AddUserCellType.coordinates]
+    private let cellTypes = [AddUserCellType.name,
+                             AddUserCellType.email,
+                             AddUserCellType.gender,
+                             AddUserCellType.birthdate,
+                             AddUserCellType.nationality,
+                             AddUserCellType.country,
+                             AddUserCellType.coordinates]
     
     
     override func viewDidLoad() {
 //        self.tableView.rowHeight = 165.0
         //        heightRow()
         configure(tableView: tableView)
-        
-        
     }
-    
-    func heightRow() {
-        if tableView.tag == 1 && tableView.tag == 2 {
-            self.tableView.rowHeight = 165.0
-        } else if tableView.tag == 3 {
-            self.tableView.rowHeight = 212.0
-        } else if tableView.tag == 4 {
-            self.tableView.rowHeight = 126.0
-        } else if tableView.tag == 5 {
-            self.tableView.rowHeight = 105.0
-        } else if tableView.tag == 6 {
-            self.tableView.rowHeight = 138.0
-        } else if tableView.tag == 7 {
-            self.tableView.rowHeight = 250.0
-        }
-    }
-    
-    
 }
 
 extension AddUserViewController: UITableViewDataSource, UITableViewDelegate {
