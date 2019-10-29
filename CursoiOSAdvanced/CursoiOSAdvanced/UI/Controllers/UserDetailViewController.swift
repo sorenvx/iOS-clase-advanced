@@ -100,7 +100,7 @@ extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
 //                    cellHeight = MapViewCell.cellHeight
 //    
 //                case .location:
-//                    cellHeight = CountryViewCell.rowHeight
+//                    cellHeight = CountryViewCell.cellHeight
 //    
 //                case .contact:
 //                    cellHeight = ContactDataViewCell.cellHeight

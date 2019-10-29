@@ -13,6 +13,7 @@ class AddUserViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBAction func saveButton(_ sender: UIButton) {
+        
     }
     
     private enum AddUserCellType: Int {
@@ -34,12 +35,89 @@ class AddUserViewController: UIViewController {
                              AddUserCellType.country,
                              AddUserCellType.coordinates]
     
+    private var userToSave: User? = nil
+    
     
     override func viewDidLoad() {
 //        self.tableView.rowHeight = 165.0
         //        heightRow()
         configure(tableView: tableView)
     }
+    
+    private func getInputData() {
+        userToSave = User(id: "983635373")
+        for (index, item) in cellTypes.enumerated() {
+          let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0))
+            switch item {
+            case .name:
+                getInputNameData(cell: cell!)
+            case .email:
+                getInputEmailData(cell: cell!)
+            case .gender:
+                getInputGenderData(cell: cell!)
+            case .birthdate:
+                getInputBirthdateData(cell: cell!)
+            case .nationality:
+                getInputNationalityData(cell: cell!)
+            case .country:
+                getInputCountryData(cell: cell!)
+            case .coordinates:
+                getInputCountryData(cell: cell!)
+            }
+        }
+    }
+    
+    private func getInputNameData(cell: UITableViewCell) {
+        guard let personalData = cell as? NameCell else {
+            return
+        }
+//        personalData.mFieldText1?.text
+//        personalData.mFieldText2?.text
+    }
+    
+    private func getInputEmailData(cell: UITableViewCell) {
+        guard let personalData = cell as? EmailCell else {
+            return
+        }
+//        personalData.mFieldText1?.text
+//        personalData.mFieldText2?.text
+//        personalData.mFieldText3?.text
+    }
+    
+    private func getInputGenderData(cell: UITableViewCell) {
+        guard let personalData = cell as? GenderCell else {
+            return
+        }
+//        personalData.genderOptions
+    }
+    
+    private func getInputBirthdateData(cell: UITableViewCell) {
+        guard let personalData = cell as? BirthdateCell else {
+            return
+        }
+//        personalData.mDatePicker
+    }
+    private func getInputNationalityData(cell: UITableViewCell) {
+        guard let personalData = cell as? NationalityCell else {
+            return
+        }
+//        personalData.mCollectionView
+    }
+    private func getInputCountryData(cell: UITableViewCell) {
+        guard let personalData = cell as? CountryCell else {
+            return
+        }
+//        personalData.mFieldText1.text
+//        personalData.mFieldText2.text
+    }
+    private func getInputCoordinatesData(cell: UITableViewCell) {
+        guard let personalData = cell as? CoordinatesCell else {
+            return
+        }
+//        personalData.mFieldText1.text
+//        personalData.mFieldText2.text
+    }
+    
 }
 
 extension AddUserViewController: UITableViewDataSource, UITableViewDelegate {

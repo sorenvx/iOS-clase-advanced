@@ -18,6 +18,10 @@ class GenderCell: UITableViewCell {
     @IBOutlet weak var mLabel: UILabel!
     
     
+    @IBAction func onGenderPressed(_ sender: UISegmentedControl) {
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 

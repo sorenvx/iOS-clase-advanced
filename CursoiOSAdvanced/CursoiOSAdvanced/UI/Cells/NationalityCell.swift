@@ -18,6 +18,9 @@ class NationalityCell: UITableViewCell {
     
     let flagOptions = ["ES", "DK", "NO", "JP", "BY", "FI", "GB", "DE", "FR", "IS", "GR", "BR", "BE", "FJ", "AU", "NL", "BM", "SE", "MA"]
     
+    override func prepareForReuse() {
+           mLabel.text = nil
+       }
     
     override func awakeFromNib() {
         super.awakeFromNib()

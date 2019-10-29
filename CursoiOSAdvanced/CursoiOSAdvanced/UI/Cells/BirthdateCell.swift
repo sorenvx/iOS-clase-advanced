@@ -15,4 +15,6 @@ class BirthdateCell: UITableViewCell {
     @IBOutlet weak var mView: UIView!
     @IBOutlet weak var mLabel: UILabel!
     @IBOutlet weak var mDatePicker: UIDatePicker!
+    
+    
 }

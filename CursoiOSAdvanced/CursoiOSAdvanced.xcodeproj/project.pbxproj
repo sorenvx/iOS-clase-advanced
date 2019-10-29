@@ -13,6 +13,7 @@
 		D95BD18D234523E7001336F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95BD18B234523E7001336F8 /* Main.storyboard */; };
 		D95BD18F234523EE001336F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95BD18E234523EE001336F8 /* Assets.xcassets */; };
 		D95BD192234523EE001336F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95BD190234523EE001336F8 /* LaunchScreen.storyboard */; };
+		D979223C2368973600930A01 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D979223B2368973600930A01 /* String+Utils.swift */; };
 		D97CD09F23478DE300F28404 /* biker.json in Resources */ = {isa = PBXBuildFile; fileRef = D97CD09E23478DE300F28404 /* biker.json */; };
 		D97CD0A1234797B000F28404 /* social.json in Resources */ = {isa = PBXBuildFile; fileRef = D97CD0A0234797B000F28404 /* social.json */; };
 		D97CD0A52347B69600F28404 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97CD0A42347B69600F28404 /* UserDAO.swift */; };
@@ -72,6 +73,7 @@
 		D95BD18E234523EE001336F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D95BD191234523EE001336F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D95BD193234523EE001336F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D979223B2368973600930A01 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		D97CD09E23478DE300F28404 /* biker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = biker.json; sourceTree = "<group>"; };
 		D97CD0A0234797B000F28404 /* social.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = social.json; sourceTree = "<group>"; };
 		D97CD0A42347B69600F28404 /* UserDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
@@ -332,9 +334,9 @@
 				D987494F2362034300B4EA92 /* GenderCell.swift */,
 				D98749512362035500B4EA92 /* BirthdateCell.swift */,
 				D98749532362036400B4EA92 /* NationalityCell.swift */,
+				D987495B236203BD00B4EA92 /* NationalityCollectionViewCell.swift */,
 				D98749552362036F00B4EA92 /* CountryCell.swift */,
 				D98749572362039200B4EA92 /* CoordinatesCell.swift */,
-				D987495B236203BD00B4EA92 /* NationalityCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -343,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				D99E03FB234665A00050E045 /* UIView+Utils.swift */,
+				D979223B2368973600930A01 /* String+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				D9830A482357623E00A832D9 /* PersonalDataViewCell.swift in Sources */,
 				D987494C2362032500B4EA92 /* NameCell.swift in Sources */,
 				D99E03ED23464E8F0050E045 /* SplashViewController.swift in Sources */,
+				D979223C2368973600930A01 /* String+Utils.swift in Sources */,
 				D99E03F8234664670050E045 /* PersonCollectionViewCell.swift in Sources */,
 				D9859403234CEE9B00C97E98 /* User.swift in Sources */,
 				D987494A2361F3BD00B4EA92 /* AddUserViewController.swift in Sources */,

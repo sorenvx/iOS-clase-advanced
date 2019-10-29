@@ -21,4 +21,17 @@ class EmailCell: UITableViewCell {
     @IBOutlet weak var mFieldText2: UITextField!
     @IBOutlet weak var mLabel3: UILabel!
     @IBOutlet weak var mFieldText3: UITextField!
+    
+    
+    
+    override func prepareForReuse() {
+           mFieldText3.text = nil
+           mFieldText1.text = nil
+           mFieldText2.text = nil
+       }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
 }

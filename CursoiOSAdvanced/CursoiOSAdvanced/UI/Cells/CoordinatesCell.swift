@@ -20,5 +20,38 @@ class CoordinatesCell: UITableViewCell {
     @IBOutlet weak var mTextField2: UITextField!
     @IBOutlet weak var mMap: MKMapView!
     
+    private let regionRadius: CLLocationDistance = 10_000
     
+    override func prepareForReuse() {
+           mTextField1.text = nil
+           mTextField2.text = nil
+       }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        mTextField1.delegate = self
+        mTextField2.delegate = self
+        
+    }
+    
+    private func centerMapOn(location: CLLocation) {
+        mMap.setRegion(MKCoordinateRegion(center: location.coordinate,
+                                             latitudinalMeters: regionRadius,
+                                             longitudinalMeters: regionRadius),
+                                                animated: true)
+    }
+}
+
+
+extension CoordinatesCell: UITextFieldDelegate {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if (!mTextField1.text!.isEmpty && mTextField2.text!.isEmpty) {
+            
+            let currentLocation = CLLocation(latitude: Double(mTextField1.text!) ?? 0, longitude: Double(mTextField2.text!) ?? 0)
+            
+            centerMapOn(location: currentLocation)
+        }
+        return false
+    }
 }

@@ -19,7 +19,24 @@ class NameCell: UITableViewCell {
     @IBOutlet weak var mLabel2: UILabel!
     @IBOutlet weak var mFieldText2: UITextField!
     
+    override func prepareForReuse() {
+        mImage.image = nil
+        mFieldText1.text = nil
+        mFieldText2.text = nil
+    }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onImageTap))
+        
+        
+        mImage.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func onImageTap() {
+        
+    }
     
 }
 
